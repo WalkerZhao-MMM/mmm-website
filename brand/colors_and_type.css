@@ -1,0 +1,395 @@
+/* ============================================================
+   Mind & Metric Media — Colours & Type Foundations
+   Precise. Forensic. No fluff.
+   Reference this file in every HTML page.
+   ============================================================ */
+
+/* ---- WEBFONTS (Google Fonts CDN) --------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* ---- TOKENS ----------------------------------------------- */
+:root {
+  /* ── Raw brand palette ───────────────────────────────────── */
+  --midnight:    #0D1B2A;
+  --signal:      #F5F0E8;
+  --ink:         #0D1B2A;
+  --gold:        #F0B429;
+  --teal:        #00C9B1;
+  --slate:       #6B7C93;
+  --panel-dark:  #132336;
+
+  /* ── Semantic aliases ────────────────────────────────────── */
+  --bg-primary:   var(--midnight);
+  --bg-card:      var(--panel-dark);
+  --bg-surface:   var(--signal);
+  --text-primary: var(--ink);
+  --text-meta:    var(--slate);
+  --accent-dark:  var(--gold);
+  --accent-light: var(--teal);
+
+  /* ── Alphas ──────────────────────────────────────────────── */
+  --gold-ghost:      rgba(240, 180, 41, 0.25);
+  --teal-ghost:      rgba(0, 201, 177, 0.20);
+  --slate-ghost:     rgba(107, 124, 147, 0.40);
+  --ink-60:          rgba(13, 27, 42, 0.60);
+  --signal-60:       rgba(245, 240, 232, 0.60);
+
+  /* Strokes */
+  --stroke-sm:   0.5px;
+  --stroke-md:   1px;
+
+  /* Radii */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-pill: 100px;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Typography */
+  --font-display: "Platypi", "Georgia", "Times New Roman", serif;
+  --font-body:    "Space Grotesk", "Calibri", "Helvetica Neue", sans-serif;
+  --font-labels:  "Space Grotesk", "Calibri", "Helvetica Neue", sans-serif;
+  --font-data:    "Space Grotesk", "Calibri", "Helvetica Neue", sans-serif;
+
+  --display: var(--font-display);
+  --text:    var(--font-body);
+  --labels:  var(--font-labels);
+  --data:    var(--font-data);
+}
+
+/* ---- BASE -------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+* { box-shadow: none !important; }
+
+body {
+  background-color: var(--midnight);
+  font-family: var(--text);
+  color: var(--signal);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin: 0;
+  padding: 0;
+}
+
+h1, .h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 8rem);
+}
+
+h2, .h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3.5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h3, .h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+
+h4, h5, h6 { font-family: var(--labels); margin: 0; }
+
+p { font-size: 1rem; line-height: 1.5; margin: 0; }
+
+a {
+  font-family: var(--labels);
+  color: var(--gold);
+  text-decoration: none;
+}
+a:hover { color: var(--teal); }
+
+/* ---- EYEBROW / LABEL -------------------------------------- */
+.eyebrow, .label {
+  font-family: var(--labels);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 0;
+}
+
+/* ---- STAT -------------------------------------------------- */
+.stat {
+  font-family: var(--data);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  color: var(--gold);
+  margin: 0;
+}
+.stat.teal { color: var(--teal); }
+
+.stat-label {
+  font-family: var(--labels);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 0.4rem;
+}
+
+/* ---- CARD NUMBER ------------------------------------------ */
+.card-num {
+  font-family: var(--labels);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 12px;
+}
+
+/* ---- DIVIDER ---------------------------------------------- */
+.mmm-divider {
+  border: none;
+  border-top: var(--stroke-sm) solid var(--slate-ghost);
+  margin: 0;
+}
+
+/* ---- SECTION PANEL (light, on dark page) ------------------ */
+.mmm-section {
+  border: 1px solid var(--gold-ghost);
+  background-color: var(--signal);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  margin: 16px;
+  padding: 40px 36px;
+}
+
+/* ---- DARK CARD -------------------------------------------- */
+.mmm-card {
+  border: 1px solid var(--gold-ghost);
+  background-color: var(--panel-dark);
+  color: var(--signal);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+}
+
+/* ---- LIGHT CARD (teal border on signal) ------------------- */
+.mmm-card-light {
+  border: 1px solid var(--teal-ghost);
+  background-color: var(--signal);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+}
+
+/* ---- HEADER ----------------------------------------------- */
+.mmm-header-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--midnight);
+  padding: 12px 16px 0;
+}
+
+.mmm-header-bar {
+  background: var(--signal);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.mmm-wordmark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.mmm-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.mmm-nav-link {
+  font-family: var(--labels);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  text-decoration: none;
+}
+.mmm-nav-link:hover { color: var(--ink); }
+.mmm-nav-link.active { color: var(--ink); }
+
+/* ---- BUTTONS ---------------------------------------------- */
+.mmm-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: var(--midnight);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1.2rem;
+  font-family: var(--labels);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+.mmm-button:hover { background: #d9a020; color: var(--midnight); }
+
+.mmm-button-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1.2rem;
+  font-family: var(--labels);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+.mmm-button-outline:hover { background: var(--teal); color: var(--midnight); }
+
+/* ---- PHOTO PLACEHOLDER ------------------------------------ */
+.mmm-photo-placeholder {
+  background: var(--panel-dark);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--slate);
+  font-family: var(--labels);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---- FOOTER ----------------------------------------------- */
+.mmm-footer {
+  background: var(--midnight);
+  border-top: var(--stroke-sm) solid var(--slate-ghost);
+  padding: 40px 16px 24px;
+}
+
+.mmm-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mmm-footer-legal {
+  font-family: var(--labels);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: var(--stroke-sm) solid var(--slate-ghost);
+}
+
+/* ---- HAMBURGER MENU (mobile) ------------------------------ */
+.mmm-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.mmm-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 1px;
+  transition: all 0.2s ease;
+}
+
+.mmm-mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: var(--signal);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  margin: 8px 16px 0;
+  overflow: hidden;
+}
+.mmm-mobile-nav.open { display: flex; }
+.mmm-mobile-nav-link {
+  font-family: var(--labels);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 16px 24px;
+  border-bottom: var(--stroke-sm) solid var(--slate-ghost);
+}
+.mmm-mobile-nav-link:last-child { border-bottom: none; }
+.mmm-mobile-nav-link:hover { background: rgba(107,124,147,0.08); }
+
+/* ---- RESPONSIVE ------------------------------------------- */
+@media (max-width: 768px) {
+  .mmm-nav { display: none; }
+  .mmm-hamburger { display: flex; }
+
+  .mmm-section {
+    margin: 8px;
+    padding: 28px 20px;
+  }
+
+  .mmm-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

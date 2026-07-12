@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+<title>Contact Mind & Metric Media | Book a Free Diagnostic Call - Auckland</title>
+<meta name="description" content="Book a free 30-min diagnostic call with Walker Zhao, Auckland performance media specialist. No pitch, no obligation. Find out if your paid search or programmatic spend is actually working.">
+<meta property="og:title" content="Book a Diagnostic Call - Mind & Metric Media">
+<meta property="og:description" content="30-min diagnostic call. No pitch, no obligation. Auckland performance media agency.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.mindandmetricmedia.co.nz/contact.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Book a Diagnostic Call | Mind & Metric Media Auckland">
+<meta name="twitter:description" content="Free 30-min call. No pitch, no obligation. Find out if your paid media spend is actually working.">
+<style>
+/* ============================================================
+   Mind & Metric Media — Colours & Type Foundations
+   Precise. Forensic. No fluff.
+   Reference this file in every HTML page.
+   ============================================================ */
+
+/* ---- WEBFONTS (Google Fonts CDN) --------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* ---- TOKENS ----------------------------------------------- */
+:root {
+  /* ── Raw brand palette ───────────────────────────────────── */
+  --midnight:    #0D1B2A;
+  --signal:      #F5F0E8;
+  --ink:         #0D1B2A;
+  --gold:        #F0B429;
+  --teal:        #00C9B1;
+  --slate:       #6B7C93;
+  --panel-dark:  #132336;
+
+  /* ── Semantic aliases ────────────────────────────────────── */
+  --bg-primary:   var(--midnight);
+  --bg-card:      var(--panel-dark);
+  --bg-surface:   var(--signal);
+  --text-primary: var(--ink);
+  --text-meta:    var(--slate);
+  --accent-dark:  var(--gold);
+  --accent-light: var(--teal);
+
+  /* ── Alphas ──────────────────────────────────────────────── */
+  --gold-ghost:      rgba(240, 180, 41, 0.25);
+  --teal-ghost:      rgba(0, 201, 177, 0.20);
+  --slate-ghost:     rgba(107, 124, 147, 0.40);
+  --ink-60:          rgba(13, 27, 42, 0.60);
+  --signal-60:       rgba(245, 240, 232, 0.60);
+
+  /* Strokes */
+  --stroke-sm:   0.5px;
+  --stroke-md:   1px;
+
+  /* Radii */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-pill: 100px;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Typography */
+  --font-display: "Platypi", "Georgia", "Times New Roman", serif;
+  --font-body:    "Space Grotesk", "Calibri", "Helvetica Neue", sans-serif;
+  --font-labels:  "Space Grotesk", "Calibri", "Helvetica Neue", sans-serif;
+  --font-data:    "Space Grotesk", "Calibri", "Helvetica Neue", sans-serif;
+
+  --display: var(--font-display);
+  --text:    var(--font-body);
+  --labels:  var(--font-labels);
+  --data:    var(--font-data);
+}
+
+/* ---- BASE -------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+* { box-shadow: none !important; }
+
+body {
+  background-color: var(--midnight);
+  font-family: var(--text);
+  color: var(--signal);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin: 0;
+  padding: 0;
+}
+
+h1, .h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 8rem);
+}
+
+h2, .h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3.5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h3, .h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+
+h4, h5, h6 { font-family: var(--labels); margin: 0; }
+
+p { font-size: 1rem; line-height: 1.5; margin: 0; }
+
+a {
+  font-family: var(--labels);
+  color: var(--gold);
+  text-decoration: none;
+}
+a:hover { color: var(--teal); }
+
+/* ---- EYEBROW / LABEL -------------------------------------- */
+.eyebrow, .label {
+  font-family: var(--labels);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 0;
+}
+
+/* ---- STAT -------------------------------------------------- */
+.stat {
+  font-family: var(--data);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  color: var(--gold);
+  margin: 0;
+}
+.stat.teal { color: var(--teal); }
+
+.stat-label {
+  font-family: var(--labels);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 0.4rem;
+}
+
+/* ---- CARD NUMBER ------------------------------------------ */
+.card-num {
+  font-family: var(--labels);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 12px;
+}
+
+/* ---- DIVIDER ---------------------------------------------- */
+.mmm-divider {
+  border: none;
+  border-top: var(--stroke-sm) solid var(--slate-ghost);
+  margin: 0;
+}
+
+/* ---- SECTION PANEL (light, on dark page) ------------------ */
+.mmm-section {
+  border: 1px solid var(--gold-ghost);
+  background-color: var(--signal);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  margin: 16px;
+  padding: 40px 36px;
+}
+
+/* ---- DARK CARD -------------------------------------------- */
+.mmm-card {
+  border: 1px solid var(--gold-ghost);
+  background-color: var(--panel-dark);
+  color: var(--signal);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+}
+
+/* ---- LIGHT CARD (teal border on signal) ------------------- */
+.mmm-card-light {
+  border: 1px solid var(--teal-ghost);
+  background-color: var(--signal);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+}
+
+/* ---- HEADER ----------------------------------------------- */
+.mmm-header-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--midnight);
+  padding: 12px 16px 0;
+}
+
+.mmm-header-bar {
+  background: var(--signal);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.mmm-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.mmm-logo-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.mmm-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.mmm-nav-link {
+  font-family: var(--labels);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  text-decoration: none;
+}
+.mmm-nav-link:hover { color: var(--ink); }
+.mmm-nav-link.active { color: var(--ink); }
+
+/* ---- BUTTONS ---------------------------------------------- */
+.mmm-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: var(--midnight);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1.2rem;
+  font-family: var(--labels);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+.mmm-button:hover { background: #d9a020; color: var(--midnight); }
+
+.mmm-button-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1.2rem;
+  font-family: var(--labels);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+.mmm-button-outline:hover { background: var(--teal); color: var(--midnight); }
+
+/* ---- PHOTO PLACEHOLDER ------------------------------------ */
+.mmm-photo-placeholder {
+  background: var(--panel-dark);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--slate);
+  font-family: var(--labels);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---- FOOTER ----------------------------------------------- */
+.mmm-footer {
+  background: var(--midnight);
+  border-top: var(--stroke-sm) solid var(--slate-ghost);
+  padding: 40px 16px 24px;
+}
+
+.mmm-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mmm-footer-legal {
+  font-family: var(--labels);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: var(--stroke-sm) solid var(--slate-ghost);
+}
+
+/* ---- HAMBURGER MENU (mobile) ------------------------------ */
+.mmm-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.mmm-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 1px;
+  transition: all 0.2s ease;
+}
+
+.mmm-mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: var(--signal);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  margin: 8px 16px 0;
+  overflow: hidden;
+}
+.mmm-mobile-nav.open { display: flex; }
+.mmm-mobile-nav-link {
+  font-family: var(--labels);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 16px 24px;
+  border-bottom: var(--stroke-sm) solid var(--slate-ghost);
+}
+.mmm-mobile-nav-link:last-child { border-bottom: none; }
+.mmm-mobile-nav-link:hover { background: rgba(107,124,147,0.08); }
+
+/* ---- RESPONSIVE ------------------------------------------- */
+@media (max-width: 768px) {
+  .mmm-nav { display: none; }
+  .mmm-hamburger { display: flex; }
+
+  .mmm-section {
+    margin: 8px;
+    padding: 28px 20px;
+  }
+
+  .mmm-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================================
+   Page layout additions (site-specific, layered on brand tokens)
+   ============================================================ */
+
+.mmm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mmm-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mmm-nav-toggle-checkbox {
+  display: none;
+}
+.mmm-nav-toggle-checkbox:checked ~ .mmm-mobile-nav {
+  display: flex;
+}
+
+.mmm-mobile-nav-link.cta { color: var(--gold); }
+.mmm-mobile-nav-link.active { color: var(--teal); }
+
+.mmm-footer-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+
+.mmm-footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.mmm-footer-nav-link {
+  font-family: var(--labels);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--signal-60);
+  text-decoration: none;
+}
+.mmm-footer-nav-link:hover { color: var(--teal); }
+
+.mmm-footer-email {
+  font-family: var(--labels);
+  font-size: 0.8rem;
+  color: var(--signal-60);
+  text-decoration: none;
+}
+.mmm-footer-email:hover { color: var(--teal); }
+
+.mmm-page-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.mmm-body-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink-60);
+}
+.mmm-body-text.on-dark { color: var(--signal-60); }
+
+.mmm-caption {
+  font-family: var(--labels);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--slate);
+}
+
+.mt-sm { margin-top: 12px; }
+.mt-md { margin-top: 24px; }
+.mt-lg { margin-top: 40px; }
+
+/* ---- Hero (home) ------------------------------------------- */
+.mmm-hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+  margin: 16px;
+  align-items: stretch;
+}
+
+.mmm-hero-panel {
+  border: 1px solid var(--gold-ghost);
+  background-color: var(--signal);
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: 56px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.mmm-hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* ---- Hero (inner pages) ------------------------------------- */
+.mmm-page-hero {
+  margin: 16px;
+  padding: 56px 40px;
+}
+
+/* ---- Numbered list ------------------------------------------ */
+.mmm-numbered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.mmm-numbered-item {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.mmm-numbered-item .num {
+  font-family: var(--labels);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+  flex-shrink: 0;
+}
+.mmm-numbered-item .num.accent-teal { color: var(--teal); }
+
+.mmm-numbered-item p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ---- Callout (chimp) ----------------------------------------- */
+.mmm-callout {
+  margin: 16px;
+  padding: 72px 48px;
+  background-color: var(--panel-dark);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  color: var(--signal);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.mmm-accent-bar {
+  width: 48px;
+  height: 3px;
+  background-color: var(--gold);
+  border-radius: 2px;
+}
+
+.mmm-callout p {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  line-height: 1.35;
+  color: var(--signal);
+  margin: 0;
+}
+
+/* ---- Stat block ------------------------------------------------ */
+.mmm-stat-block {
+  margin: 16px;
+  padding: 56px 40px;
+  background-color: var(--panel-dark);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  color: var(--signal);
+}
+
+.mmm-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 24px;
+}
+
+/* ---- CTA banner (anti-cliche) ----------------------------------- */
+.mmm-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.mmm-cta-banner-text { flex: 1; }
+
+.mmm-statement {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0;
+}
+
+.mmm-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+/* ---- Services grid ----------------------------------------------- */
+.mmm-services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px;
+}
+
+.mmm-bullet-list p {
+  margin: 0 0 14px 0;
+  line-height: 1.6;
+}
+.mmm-bullet-list p:last-child { margin-bottom: 0; }
+
+/* ---- Dark panel (generic) ----------------------------------------- */
+.mmm-panel-dark {
+  margin: 16px;
+  padding: 48px 40px;
+  background-color: var(--panel-dark);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  color: var(--signal);
+}
+
+/* ---- About: two column --------------------------------------------- */
+.mmm-two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.mmm-photo-placeholder.large { min-height: 400px; }
+.mmm-photo-placeholder.award { min-height: 300px; }
+
+.mmm-credential-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+.mmm-credential-list p {
+  font-size: 1.05rem;
+  color: var(--signal-60);
+  margin: 0;
+}
+
+.mmm-loose-section {
+  margin: 40px 16px 16px;
+}
+
+.mmm-award-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* ---- Contact CTA -------------------------------------------------- */
+.mmm-contact-cta-secondary {
+  padding-top: 24px;
+  border-top: var(--stroke-sm) solid var(--slate-ghost);
+}
+
+/* ---- Contact form -------------------------------------------------- */
+.mmm-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 560px;
+}
+.mmm-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mmm-form-row label {
+  font-family: var(--labels);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.mmm-form-row input,
+.mmm-form-row textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--text);
+  font-size: 1rem;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--slate-ghost);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+.mmm-form-row textarea {
+  resize: vertical;
+}
+.mmm-form-row input:focus,
+.mmm-form-row textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.mmm-contact-form button.mmm-button {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+.mmm-form-status {
+  font-family: var(--labels);
+  font-size: 0.8rem;
+  color: var(--slate);
+  margin: 0;
+}
+
+/* ---- Responsive --------------------------------------------------- */
+@media (max-width: 768px) {
+  .mmm-hero,
+  .mmm-stat-grid,
+  .mmm-services-grid,
+  .mmm-two-col,
+  .mmm-award-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mmm-callout,
+  .mmm-stat-block,
+  .mmm-panel-dark,
+  .mmm-page-hero {
+    margin: 8px;
+    padding: 40px 24px;
+  }
+
+  .mmm-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mmm-header-actions .mmm-button {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mmm-wordmark {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="mmm-header-wrap">
+  <input type="checkbox" id="nav-toggle" class="mmm-nav-toggle-checkbox">
+  <div class="mmm-header-bar">
+    <a href="index.html" class="mmm-wordmark"><img src="images/logo-mark-navy.png" alt="" class="mmm-logo-icon">MIND &amp; METRIC MEDIA</a>
+    <nav class="mmm-nav">
+      <a href="index.html" class="mmm-nav-link">HOME</a>
+      <a href="services.html" class="mmm-nav-link">SERVICES</a>
+      <a href="about.html" class="mmm-nav-link">ABOUT</a>
+      <a href="contact.html" class="mmm-nav-link active">CONTACT</a>
+    </nav>
+    <div class="mmm-header-actions">
+      <a href="contact.html" class="mmm-button">BOOK A CALL &rarr;</a>
+      <label for="nav-toggle" class="mmm-hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+  <nav class="mmm-mobile-nav">
+    <a href="index.html" class="mmm-mobile-nav-link">HOME</a>
+    <a href="services.html" class="mmm-mobile-nav-link">SERVICES</a>
+    <a href="about.html" class="mmm-mobile-nav-link">ABOUT</a>
+    <a href="contact.html" class="mmm-mobile-nav-link active">CONTACT</a>
+    <a href="contact.html" class="mmm-mobile-nav-link cta">BOOK A CALL &rarr;</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="mmm-section mmm-page-hero">
+    <p class="eyebrow">04 - CONTACT</p>
+    <h1 class="mmm-page-title mt-sm">Start with a question</h1>
+    <h2 style="font-family:var(--labels);font-size:1rem;font-weight:400;color:var(--signal-60);letter-spacing:0.05em;margin-top:0.75rem;text-transform:none;">Book a free 30-minute diagnostic call with an Auckland SEM and programmatic specialist</h2>
+  </section>
+
+  <!-- Body -->
+  <section class="mmm-section">
+    <p class="mmm-body-text">If you're spending money on paid search or programmatic and you're not certain it's working - or you need to move faster than your current setup allows - the first conversation is diagnostic, not commercial.</p>
+    <p class="mmm-body-text mt-md">Mind &amp; Metric Media works with a small number of clients at a time. If the numbers don't support working together, that's what the call is for.</p>
+    <p class="mmm-body-text mt-md">Auckland, New Zealand.</p>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="mmm-section">
+    <form class="mmm-contact-form" id="mmm-contact-form">
+      <div class="mmm-form-row">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" required>
+      </div>
+      <div class="mmm-form-row">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" name="email" required>
+      </div>
+      <div class="mmm-form-row">
+        <label for="cf-company">Company</label>
+        <input type="text" id="cf-company" name="company">
+      </div>
+      <div class="mmm-form-row">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="mmm-button">SEND &rarr;</button>
+      <p class="mmm-form-status" id="mmm-form-status"></p>
+    </form>
+
+    <div class="mmm-contact-cta-secondary mt-lg">
+      <p class="mmm-body-text">Or email: <a href="mailto:enquiries@mindandmetricmedia.co.nz">enquiries@mindandmetricmedia.co.nz</a></p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+document.getElementById('mmm-contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var name = document.getElementById('cf-name').value.trim();
+  var email = document.getElementById('cf-email').value.trim();
+  var company = document.getElementById('cf-company').value.trim();
+  var message = document.getElementById('cf-message').value.trim();
+
+  var subject = 'Enquiry from ' + name;
+  var bodyParts = ['Name: ' + name, 'Email: ' + email];
+  if (company) { bodyParts.push('Company: ' + company); }
+  bodyParts.push('', message);
+
+  var mailto = 'mailto:enquiries@mindandmetricmedia.co.nz'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(bodyParts.join('\n'));
+
+  document.getElementById('mmm-form-status').textContent = 'Opening your email client to send this.';
+  window.location.href = mailto;
+});
+</script>
+
+<footer class="mmm-footer">
+  <div class="mmm-container">
+    <div class="mmm-footer-inner">
+      <div class="mmm-footer-wordmark"><img src="images/logo-mark-gold.png" alt="" class="mmm-logo-icon">MIND &amp; METRIC MEDIA</div>
+      <nav class="mmm-footer-nav">
+        <a href="index.html" class="mmm-footer-nav-link">HOME</a>
+        <a href="services.html" class="mmm-footer-nav-link">SERVICES</a>
+        <a href="about.html" class="mmm-footer-nav-link">ABOUT</a>
+        <a href="contact.html" class="mmm-footer-nav-link">CONTACT</a>
+      </nav>
+      <a href="mailto:enquiries@mindandmetricmedia.co.nz" class="mmm-footer-email">enquiries@mindandmetricmedia.co.nz</a>
+    </div>
+    <p class="mmm-footer-legal">Auckland, New Zealand - &copy; 2026 Mind &amp; Metric Media Limited</p>
+  </div>
+</footer>
+
+</body>
+</html>
