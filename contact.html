@@ -763,62 +763,15 @@ a:hover { color: var(--teal); }
   color: var(--slate);
   margin: 0;
 }
-
-/* ---- Web3Forms secondary contact form ------------------------------ */
-.mmm-w3f-panel {
-  background: var(--panel-dark);
-  border: 1px solid var(--gold-ghost);
-  border-radius: var(--radius-md);
-  padding: 36px;
+.mmm-form-status.error {
+  color: #e05252;
 }
-.mmm-w3f-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 560px;
-}
-.mmm-w3f-row label {
-  font-family: var(--text);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--slate);
-  margin-bottom: 6px;
-  display: block;
-}
-.mmm-w3f-row input,
-.mmm-w3f-row textarea {
-  background: transparent;
-  border: 1px solid rgba(107,124,147,0.4);
-  border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  color: var(--signal);
-  font-family: var(--text);
-  font-size: 0.95rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-.mmm-w3f-row textarea {
-  resize: vertical;
-  min-height: 140px;
-}
-.mmm-w3f-row input:focus,
-.mmm-w3f-row textarea:focus {
-  border-color: var(--gold);
-  outline: none;
-}
-.mmm-w3f-success {
+.mmm-form-success {
   font-family: var(--text);
   color: var(--teal);
   font-size: 0.95rem;
   padding: 24px;
   text-align: center;
-}
-.mmm-w3f-error {
-  color: #e05252;
-  font-size: 0.8rem;
-  margin-top: 12px;
 }
 
 /* ---- Responsive --------------------------------------------------- */
@@ -904,6 +857,9 @@ a:hover { color: var(--teal); }
   <!-- CTA Section -->
   <section class="mmm-section">
     <form class="mmm-contact-form" id="mmm-contact-form">
+      <input type="hidden" name="access_key" value="532a72a2-7171-413a-91e9-46ac92232d2e">
+      <input type="checkbox" name="botcheck" style="display:none">
+      <input type="hidden" name="subject" value="New enquiry — Mind &amp; Metric Media">
       <div class="mmm-form-row">
         <label for="cf-name">Name</label>
         <input type="text" id="cf-name" name="name" required>
@@ -920,38 +876,14 @@ a:hover { color: var(--teal); }
         <label for="cf-message">Message</label>
         <textarea id="cf-message" name="message" rows="5" required></textarea>
       </div>
-      <button type="submit" class="mmm-button">SEND &rarr;</button>
-      <p class="mmm-form-status" id="mmm-form-status"></p>
+      <button type="submit" class="mmm-button" id="cf-submit-btn">SEND &rarr;</button>
+      <p class="mmm-form-status" id="mmm-form-status" style="display:none;"></p>
     </form>
+    <div class="mmm-form-success" id="mmm-form-success" style="display:none;">Message sent. Mind &amp; Metric Media will be in touch.</div>
 
     <div class="mmm-contact-cta-secondary mt-lg">
       <p class="mmm-body-text">Or email: <a href="mailto:enquiries@mindandmetricmedia.co.nz">enquiries@mindandmetricmedia.co.nz</a></p>
     </div>
-  </section>
-
-  <!-- Secondary CTA — Web3Forms message form -->
-  <section class="mmm-loose-section mmm-w3f-panel">
-    <p class="eyebrow">OR SEND A MESSAGE</p>
-    <form class="mmm-w3f-form mt-md" id="mmm-w3f-form">
-      <input type="hidden" name="access_key" value="532a72a2-7171-413a-91e9-46ac92232d2e">
-      <input type="checkbox" name="botcheck" style="display:none">
-      <input type="hidden" name="subject" value="New enquiry — Mind &amp; Metric Media">
-      <div class="mmm-w3f-row">
-        <label for="w3f-name">Name</label>
-        <input type="text" id="w3f-name" name="name" placeholder="Your name" required>
-      </div>
-      <div class="mmm-w3f-row">
-        <label for="w3f-email">Email</label>
-        <input type="email" id="w3f-email" name="email" placeholder="your@email.com" required>
-      </div>
-      <div class="mmm-w3f-row">
-        <label for="w3f-message">Message</label>
-        <textarea id="w3f-message" name="message" placeholder="What are you working on?" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="mmm-button" id="w3f-submit-btn">SEND MESSAGE &rarr;</button>
-      <p class="mmm-w3f-error" id="w3f-error" style="display:none;"></p>
-    </form>
-    <div class="mmm-w3f-success" id="w3f-success" style="display:none;">Message sent. Mind &amp; Metric Media will be in touch.</div>
   </section>
 
 </main>
@@ -959,37 +891,16 @@ a:hover { color: var(--teal); }
 <script>
 document.getElementById('mmm-contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
-  var name = document.getElementById('cf-name').value.trim();
-  var email = document.getElementById('cf-email').value.trim();
-  var company = document.getElementById('cf-company').value.trim();
-  var message = document.getElementById('cf-message').value.trim();
-
-  var subject = 'Enquiry from ' + name;
-  var bodyParts = ['Name: ' + name, 'Email: ' + email];
-  if (company) { bodyParts.push('Company: ' + company); }
-  bodyParts.push('', message);
-
-  var mailto = 'mailto:enquiries@mindandmetricmedia.co.nz'
-    + '?subject=' + encodeURIComponent(subject)
-    + '&body=' + encodeURIComponent(bodyParts.join('\n'));
-
-  document.getElementById('mmm-form-status').textContent = 'Opening your email client to send this.';
-  window.location.href = mailto;
-});
-</script>
-
-<script>
-document.getElementById('mmm-w3f-form').addEventListener('submit', function (e) {
-  e.preventDefault();
 
   var form = e.target;
-  var submitBtn = document.getElementById('w3f-submit-btn');
-  var errorEl = document.getElementById('w3f-error');
-  var successEl = document.getElementById('w3f-success');
+  var submitBtn = document.getElementById('cf-submit-btn');
+  var statusEl = document.getElementById('mmm-form-status');
+  var successEl = document.getElementById('mmm-form-success');
   var originalBtnText = submitBtn.innerHTML;
 
-  errorEl.style.display = 'none';
-  errorEl.textContent = '';
+  statusEl.style.display = 'none';
+  statusEl.classList.remove('error');
+  statusEl.textContent = '';
   submitBtn.disabled = true;
   submitBtn.textContent = 'SENDING...';
 
@@ -1016,8 +927,9 @@ document.getElementById('mmm-w3f-form').addEventListener('submit', function (e) 
       }
     })
     .catch(function () {
-      errorEl.textContent = 'Something went wrong. Please email enquiries@mindandmetricmedia.co.nz directly.';
-      errorEl.style.display = 'block';
+      statusEl.textContent = 'Something went wrong. Please email enquiries@mindandmetricmedia.co.nz directly.';
+      statusEl.classList.add('error');
+      statusEl.style.display = 'block';
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
     });
