@@ -764,6 +764,63 @@ a:hover { color: var(--teal); }
   margin: 0;
 }
 
+/* ---- Web3Forms secondary contact form ------------------------------ */
+.mmm-w3f-panel {
+  background: var(--panel-dark);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  padding: 36px;
+}
+.mmm-w3f-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 560px;
+}
+.mmm-w3f-row label {
+  font-family: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 6px;
+  display: block;
+}
+.mmm-w3f-row input,
+.mmm-w3f-row textarea {
+  background: transparent;
+  border: 1px solid rgba(107,124,147,0.4);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  color: var(--signal);
+  font-family: var(--text);
+  font-size: 0.95rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mmm-w3f-row textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+.mmm-w3f-row input:focus,
+.mmm-w3f-row textarea:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+.mmm-w3f-success {
+  font-family: var(--text);
+  color: var(--teal);
+  font-size: 0.95rem;
+  padding: 24px;
+  text-align: center;
+}
+.mmm-w3f-error {
+  color: #e05252;
+  font-size: 0.8rem;
+  margin-top: 12px;
+}
+
 /* ---- Responsive --------------------------------------------------- */
 @media (max-width: 768px) {
   .mmm-hero,
@@ -872,6 +929,31 @@ a:hover { color: var(--teal); }
     </div>
   </section>
 
+  <!-- Secondary CTA — Web3Forms message form -->
+  <section class="mmm-loose-section mmm-w3f-panel">
+    <p class="eyebrow">OR SEND A MESSAGE</p>
+    <form class="mmm-w3f-form mt-md" id="mmm-w3f-form">
+      <input type="hidden" name="access_key" value="532a72a2-7171-413a-91e9-46ac92232d2e">
+      <input type="checkbox" name="botcheck" style="display:none">
+      <input type="hidden" name="subject" value="New enquiry — Mind &amp; Metric Media">
+      <div class="mmm-w3f-row">
+        <label for="w3f-name">Name</label>
+        <input type="text" id="w3f-name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="mmm-w3f-row">
+        <label for="w3f-email">Email</label>
+        <input type="email" id="w3f-email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="mmm-w3f-row">
+        <label for="w3f-message">Message</label>
+        <textarea id="w3f-message" name="message" placeholder="What are you working on?" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="mmm-button" id="w3f-submit-btn">SEND MESSAGE &rarr;</button>
+      <p class="mmm-w3f-error" id="w3f-error" style="display:none;"></p>
+    </form>
+    <div class="mmm-w3f-success" id="w3f-success" style="display:none;">Message sent. Mind &amp; Metric Media will be in touch.</div>
+  </section>
+
 </main>
 
 <script>
@@ -893,6 +975,52 @@ document.getElementById('mmm-contact-form').addEventListener('submit', function 
 
   document.getElementById('mmm-form-status').textContent = 'Opening your email client to send this.';
   window.location.href = mailto;
+});
+</script>
+
+<script>
+document.getElementById('mmm-w3f-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  var form = e.target;
+  var submitBtn = document.getElementById('w3f-submit-btn');
+  var errorEl = document.getElementById('w3f-error');
+  var successEl = document.getElementById('w3f-success');
+  var originalBtnText = submitBtn.innerHTML;
+
+  errorEl.style.display = 'none';
+  errorEl.textContent = '';
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'SENDING...';
+
+  var formData = new FormData(form);
+  var object = {};
+  formData.forEach(function (value, key) { object[key] = value; });
+  var json = JSON.stringify(object);
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: json
+  })
+    .then(function (response) { return response.json(); })
+    .then(function (result) {
+      if (result.success) {
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    })
+    .catch(function () {
+      errorEl.textContent = 'Something went wrong. Please email enquiries@mindandmetricmedia.co.nz directly.';
+      errorEl.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+    });
 });
 </script>
 
