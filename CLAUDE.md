@@ -228,10 +228,10 @@ Use a --panel-dark div, 400px tall, with label "[ Photo ]" in --slate text.
 ### Credentials
 Dark panel. Label: "CREDENTIALS"
 
-Four credential rows (em dash, each on its own line):
+Two credential rows (em dash, each on its own line — the Google Agency Excellence
+and IAB Best Performance Campaign awards belong to Walker's previous agency (WPP)
+and must not appear on this site):
 — Winner — Google Honours Agency SuperStar Award, Q2 2025
-— Winner — Google Agency Excellence Awards, Brand Awareness, 2025
-— Finalist — IAB New Zealand Digital Advertising Awards, Best Performance Campaign, 2023
 — Finalist — IAB New Zealand Digital Advertising Awards, Emerging Talent, 2023
 
 ### Award Photos Section
