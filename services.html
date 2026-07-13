@@ -52,6 +52,8 @@
   --slate-ghost:     rgba(107, 124, 147, 0.40);
   --ink-60:          rgba(13, 27, 42, 0.60);
   --signal-60:       rgba(245, 240, 232, 0.60);
+  --ink-75:          rgba(13, 27, 42, 0.75);
+  --signal-75:       rgba(245, 240, 232, 0.75);
 
   /* Strokes */
   --stroke-sm:   0.5px;
@@ -496,10 +498,11 @@ a:hover { color: var(--teal); }
 
 .mmm-body-text {
   font-size: 1.05rem;
+  font-weight: 400;
   line-height: 1.6;
-  color: var(--ink-60);
+  color: var(--ink-75);
 }
-.mmm-body-text.on-dark { color: var(--signal-60); }
+.mmm-body-text.on-dark { color: var(--signal-75); }
 
 .mmm-caption {
   font-family: var(--labels);
@@ -731,7 +734,9 @@ a:hover { color: var(--teal); }
   }
 
   .mmm-header-actions .mmm-button {
-    display: none;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -790,22 +795,23 @@ a:hover { color: var(--teal); }
 
   <!-- Hero -->
   <section class="mmm-section mmm-page-hero">
-    <p class="eyebrow">02 - SERVICES</p>
-    <h1 class="mmm-page-title mt-sm">Two channels. One system. One question.</h1>
-    <p class="mmm-body-text mt-md">Search and programmatic control the majority of measurable performance spend. They're also where most budgets are most consistently misallocated - not through negligence, but because both channels are designed to make optimisation look like strategy.</p>
+    <p class="eyebrow">02 &mdash; SERVICES</p>
+    <h1 class="mmm-page-title mt-sm">One question. Two ways in.</h1>
+    <p class="mmm-body-text mt-md">Paid search is where most measurable performance budgets live &mdash; and where they're most consistently misallocated. Not through negligence, but because the platforms are designed to make optimisation look like strategy.</p>
+    <p class="mmm-body-text mt-sm">Mind &amp; Metric Media manages the media end to end, or audits what's already running. Both engagements start with the same question: what is this spend actually driving?</p>
   </section>
 
   <!-- Service 1 & 2 -->
   <div class="mmm-services-grid">
     <div class="mmm-card">
       <h2 style="font-family:var(--display);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:600;color:var(--signal);margin:0 0 0.5rem;">Search Engine Marketing</h2>
-      <p class="eyebrow">SEM - GOOGLE &amp; BING</p>
+      <p class="eyebrow">SEM &mdash; GOOGLE &amp; BING</p>
       <h2 style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:500;color:var(--signal);margin:0.75rem 0 1rem;line-height:1.3;">Paid search across Google and Bing. Strategy through to execution.</h2>
       <div class="mmm-bullet-list mt-md">
-        <p>- Incrementality testing: establishing what search is actually driving versus what it's claiming credit for</p>
-        <p>- Bid architecture that doesn't defer to platform black boxes</p>
-        <p>- Cross-engine management with unified attribution, not parallel reports</p>
-        <p>- Campaign structures built for signal efficiency, not dashboard aesthetics</p>
+        <p>&mdash; Incrementality testing: establishing what search is actually driving versus what it's claiming credit for</p>
+        <p>&mdash; Bid architecture that doesn't defer to platform black boxes</p>
+        <p>&mdash; Cross-engine management with unified attribution, not parallel reports</p>
+        <p>&mdash; Campaign structures built for signal efficiency, not dashboard aesthetics</p>
       </div>
       <p class="mmm-caption mt-md">Who this is for: Businesses spending $5,000&ndash;$100,000+ per month on paid search who have a suspicion the numbers are too good.</p>
     </div>
@@ -815,10 +821,10 @@ a:hover { color: var(--teal); }
       <p class="eyebrow">INDEPENDENT REVIEW</p>
       <h2 style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:500;color:var(--ink);margin:0.75rem 0 1rem;line-height:1.3;">A second opinion on what's already running, before you commit to more.</h2>
       <div class="mmm-bullet-list mt-md">
-        <p>- Full-funnel audit across search and programmatic accounts, agencies, and platforms</p>
-        <p>- Measurement and attribution review - what's actually being tracked versus what's being reported</p>
-        <p>- Wasted spend identification across campaigns, keywords, and placements</p>
-        <p>- A written brief with prioritised recommendations, whether or not you engage further</p>
+        <p>&mdash; Full-funnel audit across search and programmatic accounts, agencies, and platforms</p>
+        <p>&mdash; Measurement and attribution review &mdash; what's actually being tracked versus what's being reported</p>
+        <p>&mdash; Wasted spend identification across campaigns, keywords, and placements</p>
+        <p>&mdash; A written brief with prioritised recommendations, whether or not you engage further</p>
       </div>
       <p class="mmm-caption mt-md">Who this is for: Businesses running paid media in-house or with another agency who want an outside read before the next budget cycle.</p>
     </div>
@@ -828,9 +834,9 @@ a:hover { color: var(--teal); }
   <section class="mmm-panel-dark">
     <h2 style="font-family:var(--display);font-size:clamp(1.3rem,2vw,1.7rem);font-weight:600;color:var(--signal);margin:0 0 0.5rem;">How it works</h2>
       <p class="eyebrow">ENGAGEMENT MODEL</p>
-    <p class="mmm-body-text on-dark mt-sm">Retainer or project.</p>
+    <p class="mmm-body-text on-dark mt-sm">Retainer or project. No lock-in contracts. All reporting in plain numbers &mdash; no proprietary dashboards designed to obscure the answer.</p>
     <div class="mmm-cta-row">
-      <a href="contact.html" class="mmm-button">BOOK A DIAGNOSTIC CALL &rarr;</a>
+      <a href="contact.html" class="mmm-button">REQUEST A DIAGNOSTIC CALL &rarr;</a>
     </div>
   </section>
 
@@ -848,7 +854,7 @@ a:hover { color: var(--teal); }
       </nav>
       <a href="mailto:enquiries@mindandmetricmedia.co.nz" class="mmm-footer-email">enquiries@mindandmetricmedia.co.nz</a>
     </div>
-    <p class="mmm-footer-legal">Auckland, New Zealand - &copy; 2026 Mind &amp; Metric Media Limited</p>
+    <p class="mmm-footer-legal">Auckland, New Zealand &mdash; &copy; 2026 Mind &amp; Metric Media Limited</p>
   </div>
 </footer>
 

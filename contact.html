@@ -52,6 +52,8 @@
   --slate-ghost:     rgba(107, 124, 147, 0.40);
   --ink-60:          rgba(13, 27, 42, 0.60);
   --signal-60:       rgba(245, 240, 232, 0.60);
+  --ink-75:          rgba(13, 27, 42, 0.75);
+  --signal-75:       rgba(245, 240, 232, 0.75);
 
   /* Strokes */
   --stroke-sm:   0.5px;
@@ -496,10 +498,11 @@ a:hover { color: var(--teal); }
 
 .mmm-body-text {
   font-size: 1.05rem;
+  font-weight: 400;
   line-height: 1.6;
-  color: var(--ink-60);
+  color: var(--ink-75);
 }
-.mmm-body-text.on-dark { color: var(--signal-60); }
+.mmm-body-text.on-dark { color: var(--signal-75); }
 
 .mmm-caption {
   font-family: var(--labels);
@@ -734,6 +737,7 @@ a:hover { color: var(--teal); }
   color: var(--slate);
 }
 .mmm-form-row input,
+.mmm-form-row select,
 .mmm-form-row textarea {
   width: 100%;
   box-sizing: border-box;
@@ -749,6 +753,7 @@ a:hover { color: var(--teal); }
   resize: vertical;
 }
 .mmm-form-row input:focus,
+.mmm-form-row select:focus,
 .mmm-form-row textarea:focus {
   outline: none;
   border-color: var(--gold);
@@ -798,7 +803,9 @@ a:hover { color: var(--teal); }
   }
 
   .mmm-header-actions .mmm-button {
-    display: none;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -842,14 +849,14 @@ a:hover { color: var(--teal); }
 
   <!-- Hero -->
   <section class="mmm-section mmm-page-hero">
-    <p class="eyebrow">04 - CONTACT</p>
+    <p class="eyebrow">04 &mdash; CONTACT</p>
     <h1 class="mmm-page-title mt-sm">Start with a question</h1>
-    <h2 style="font-family:var(--labels);font-size:1rem;font-weight:400;color:var(--signal-60);letter-spacing:0.05em;margin-top:0.75rem;text-transform:none;">Book a free 30-minute diagnostic call with an Auckland SEM and programmatic specialist</h2>
+    <h2 style="font-family:var(--labels);font-size:1rem;font-weight:400;color:var(--ink-60);letter-spacing:0.05em;margin-top:0.75rem;text-transform:none;">Request a free 30-minute diagnostic call with an Auckland SEM and programmatic specialist &mdash; no pitch, no obligation</h2>
   </section>
 
   <!-- Body -->
   <section class="mmm-section">
-    <p class="mmm-body-text">If you're spending money on paid search or programmatic and you're not certain it's working - or you need to move faster than your current setup allows - the first conversation is diagnostic, not commercial.</p>
+    <p class="mmm-body-text">If you're spending money on paid search or programmatic and you're not certain it's working &mdash; or you need to move faster than your current setup allows &mdash; the first conversation is diagnostic, not commercial.</p>
     <p class="mmm-body-text mt-md">Mind &amp; Metric Media works with a small number of clients at a time. If the numbers don't support working together, that's what the call is for.</p>
     <p class="mmm-body-text mt-md">Auckland, New Zealand.</p>
   </section>
@@ -873,10 +880,20 @@ a:hover { color: var(--teal); }
         <input type="text" id="cf-company" name="company">
       </div>
       <div class="mmm-form-row">
+        <label for="cf-spend">Monthly media spend (optional)</label>
+        <select id="cf-spend" name="monthly_media_spend">
+          <option value="" selected>Prefer not to say</option>
+          <option value="Under $5,000">Under $5,000</option>
+          <option value="$5,000 - $20,000">$5,000&ndash;$20,000</option>
+          <option value="$20,000 - $100,000">$20,000&ndash;$100,000</option>
+          <option value="$100,000+">$100,000+</option>
+        </select>
+      </div>
+      <div class="mmm-form-row">
         <label for="cf-message">Message</label>
         <textarea id="cf-message" name="message" rows="5" required></textarea>
       </div>
-      <button type="submit" class="mmm-button" id="cf-submit-btn">SEND &rarr;</button>
+      <button type="submit" class="mmm-button" id="cf-submit-btn">REQUEST THE CALL &rarr;</button>
       <p class="mmm-form-status" id="mmm-form-status" style="display:none;"></p>
     </form>
     <div class="mmm-form-success" id="mmm-form-success" style="display:none;">Message sent. Mind &amp; Metric Media will be in touch.</div>
@@ -948,7 +965,7 @@ document.getElementById('mmm-contact-form').addEventListener('submit', function 
       </nav>
       <a href="mailto:enquiries@mindandmetricmedia.co.nz" class="mmm-footer-email">enquiries@mindandmetricmedia.co.nz</a>
     </div>
-    <p class="mmm-footer-legal">Auckland, New Zealand - &copy; 2026 Mind &amp; Metric Media Limited</p>
+    <p class="mmm-footer-legal">Auckland, New Zealand &mdash; &copy; 2026 Mind &amp; Metric Media Limited</p>
   </div>
 </footer>
 

@@ -53,6 +53,8 @@
   --slate-ghost:     rgba(107, 124, 147, 0.40);
   --ink-60:          rgba(13, 27, 42, 0.60);
   --signal-60:       rgba(245, 240, 232, 0.60);
+  --ink-75:          rgba(13, 27, 42, 0.75);
+  --signal-75:       rgba(245, 240, 232, 0.75);
 
   /* Strokes */
   --stroke-sm:   0.5px;
@@ -497,10 +499,11 @@ a:hover { color: var(--teal); }
 
 .mmm-body-text {
   font-size: 1.05rem;
+  font-weight: 400;
   line-height: 1.6;
-  color: var(--ink-60);
+  color: var(--ink-75);
 }
-.mmm-body-text.on-dark { color: var(--signal-60); }
+.mmm-body-text.on-dark { color: var(--signal-75); }
 
 .mmm-caption {
   font-family: var(--labels);
@@ -519,73 +522,6 @@ a:hover { color: var(--teal); }
   font-size: clamp(2.5rem, 7vw, 8rem);
   line-height: 1.05;
   letter-spacing: -0.01em;
-  color: var(--ink);
-  margin: 0;
-}
-
-/* ---- Word cycle (hero riddle: M&M's? / MMM / Mind & Metric Media) -- */
-.mmm-word-cycle {
-  display: flex;
-  align-items: flex-start;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 4vw, 2.6rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin: 0;
-}
-.mmm-word-fixed {
-  flex-shrink: 0;
-}
-.mmm-word-suffix-wrap {
-  position: relative;
-  flex: 1;
-  min-height: 2.4em;
-}
-.mmm-word-suffix {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(0.3em);
-  animation: mmm-word-fade 8s infinite;
-  backface-visibility: hidden;
-}
-.mmm-word-suffix:nth-child(1) { animation-delay: 0s; }
-.mmm-word-suffix:nth-child(2) { animation-delay: 2s; }
-.mmm-word-suffix:nth-child(3) { animation-delay: 4s; }
-.mmm-word-suffix:nth-child(4) { animation-delay: 6s; }
-@keyframes mmm-word-fade {
-  0% { opacity: 0; visibility: visible; transform: translateY(0.3em); }
-  6%, 19% { opacity: 1; visibility: visible; transform: translateY(0); }
-  25% { opacity: 0; visibility: hidden; transform: translateY(-0.3em); }
-  100% { opacity: 0; visibility: hidden; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .mmm-word-suffix {
-    animation: none;
-    opacity: 0;
-    visibility: hidden;
-    position: static;
-  }
-  .mmm-word-suffix:last-child {
-    opacity: 1;
-    visibility: visible;
-  }
-  .mmm-word-suffix-wrap {
-    min-height: 0;
-  }
-}
-
-.mmm-hero-h1 {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(1.2rem, 2.4vw, 1.9rem);
-  line-height: 1.35;
-  letter-spacing: -0.005em;
   color: var(--ink);
   margin: 0;
 }
@@ -871,7 +807,9 @@ a:hover { color: var(--teal); }
   }
 
   .mmm-header-actions .mmm-button {
-    display: none;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -939,38 +877,37 @@ a:hover { color: var(--teal); }
   <!-- Section 1 — Hero -->
   <section class="mmm-hero">
     <div class="mmm-hero-panel">
-      <p class="eyebrow">01 - PERFORMANCE MEDIA</p>
-      <p class="mmm-word-cycle" aria-label="M&amp;M's? Marketing Mix Modeling? Mmm... Mind &amp; Metric Media."><span class="mmm-word-fixed" aria-hidden="true">M</span><span class="mmm-word-suffix-wrap"><span class="mmm-word-suffix" aria-hidden="true">&amp;M's?</span><span class="mmm-word-suffix" aria-hidden="true">arketing Mix Modeling?</span><span class="mmm-word-suffix" aria-hidden="true">mm...</span><span class="mmm-word-suffix" aria-hidden="true">ind &amp; Metric Media.</span></span></p>
-      <p class="mmm-body-text">Yes, like the chocolate you might have every day and get addicted to - also like Marketing Mix Modeling, the North Star of marketing science. That's not a coincidence. That's the whole point.</p>
-      <h1 class="mmm-hero-h1">Mind &amp; Metric Media builds and runs paid media systems for businesses that are done guessing.</h1>
+      <p class="eyebrow">01 &mdash; PERFORMANCE MEDIA</p>
+      <h1 class="mmm-page-title">Paid media systems for businesses that are done guessing.</h1>
+      <p class="mmm-body-text">MMM &mdash; as in Marketing Mix Modeling, the discipline that answers whether advertising is actually working. The name is the method.</p>
       <div>
-        <a href="services.html" class="mmm-button">SEE WHAT WE DO &rarr;</a>
+        <a href="contact.html" class="mmm-button">REQUEST A DIAGNOSTIC CALL &rarr;</a>
       </div>
     </div>
     <div class="mmm-hero-stats">
       <div class="mmm-card">
         <p class="card-num">01</p>
-        <p>Award-Winning Advertising Gun</p>
+        <p>Winner &mdash; Google Honours Agency SuperStar Award, 2025</p>
       </div>
       <div class="mmm-card">
         <p class="card-num">02</p>
-        <p>10+ years across FMCG and Digital Marketing - Carlsberg, Nestl&eacute;, Coca-Cola, AA New Zealand and WPP</p>
+        <p>10+ years across FMCG and digital marketing &mdash; Carlsberg, Nestl&eacute;, Coca-Cola, AA New Zealand and WPP</p>
       </div>
       <div class="mmm-card">
         <p class="card-num">03</p>
-        <p>Your reliable friend in Auckland who's always just a text away.</p>
+        <p>Auckland-based. Founder-led. A small number of clients at a time.</p>
       </div>
     </div>
   </section>
 
   <!-- Section 2 — Philosophy -->
   <section class="mmm-section">
-    <p class="eyebrow">02 - THE PROBLEM</p>
+    <p class="eyebrow">02 &mdash; THE PROBLEM</p>
       <h2 style="font-family:var(--display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600;color:var(--ink);margin:1rem 0 1.5rem;">Why most paid media spending doesn't get measured the way it should</h2>
     <div class="mmm-numbered-list">
       <div class="mmm-numbered-item">
         <span class="num accent-teal">01</span>
-        <p>Most ad spend has never been tested to confirm it's driving new customers - not just intercepting ones who were already going to buy.</p>
+        <p>Most ad spend has never been tested to confirm it's driving new customers &mdash; not just intercepting ones who were already going to buy.</p>
       </div>
       <div class="mmm-numbered-item">
         <span class="num accent-teal">02</span>
@@ -993,14 +930,13 @@ a:hover { color: var(--teal); }
     <div class="mmm-accent-bar"></div>
     <p>A lot of people believe AI can now automate their way to results.</p>
     <p>That's because they haven't seen a chimpanzee with a machine gun.</p>
-    <p>AI itself isn't aware of its real-world consequences.</p>
     <p>The tool is only as good as the judgment behind it.</p>
   </section>
 
   <!-- Section 4 — Google Stat Block -->
   <section class="mmm-stat-block">
     <h2 style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;color:var(--signal);margin:0 0 0.5rem;">What treating media budget like an investment looks like</h2>
-    <p class="eyebrow" style="margin-bottom:1.5rem;">GOOGL IPO AUGUST 2004 - JULY 2026</p>
+    <p class="eyebrow" style="margin-bottom:1.5rem;">GOOGL IPO AUGUST 2004 &mdash; JULY 2026</p>
     <div class="mmm-stat-grid">
       <div>
         <p class="stat">$10,000</p>
@@ -1008,7 +944,7 @@ a:hover { color: var(--teal); }
       </div>
       <div>
         <p class="stat">$1,688,000</p>
-        <p class="stat-label">value in July 2026 - a return of 16,780%</p>
+        <p class="stat-label">value in July 2026 &mdash; a return of 16,780%</p>
       </div>
     </div>
     <p class="mmm-body-text on-dark mt-lg">Nobody asked their broker "did the trade run?" They asked "did it return?"</p>
@@ -1019,12 +955,13 @@ a:hover { color: var(--teal); }
   <!-- Section 5 — Anti-Cliché Statement -->
   <section class="mmm-section mmm-cta-banner">
     <div class="mmm-cta-banner-text">
-      <p class="mmm-statement">Someone will always call themselves data-driven. The label has stopped meaning anything.</p>
-      <p class="mmm-body-text mt-md">The question this agency starts every engagement with: what would happen if we didn't spend this money?</p>
+      <p class="mmm-statement">Mind &amp; Metric Media is not data-driven. Not Auckland's best. Not full-service. Not a strategic partner.</p>
+      <p class="mmm-body-text mt-md">Every agency says those things. They have stopped meaning anything.</p>
+      <p class="mmm-body-text mt-sm">The question this agency starts every engagement with: what would happen if we didn't spend this money?</p>
       <p class="mmm-body-text mt-sm">If you don't know the answer, that's where we start.</p>
     </div>
     <div class="mmm-cta-row">
-      <a href="contact.html" class="mmm-button-outline">START HERE &rarr;</a>
+      <a href="contact.html" class="mmm-button-outline">REQUEST A DIAGNOSTIC CALL &rarr;</a>
     </div>
   </section>
 
@@ -1042,7 +979,7 @@ a:hover { color: var(--teal); }
       </nav>
       <a href="mailto:enquiries@mindandmetricmedia.co.nz" class="mmm-footer-email">enquiries@mindandmetricmedia.co.nz</a>
     </div>
-    <p class="mmm-footer-legal">Auckland, New Zealand - &copy; 2026 Mind &amp; Metric Media Limited</p>
+    <p class="mmm-footer-legal">Auckland, New Zealand &mdash; &copy; 2026 Mind &amp; Metric Media Limited</p>
   </div>
 </footer>
 

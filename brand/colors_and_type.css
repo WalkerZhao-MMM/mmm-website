@@ -34,6 +34,8 @@
   --slate-ghost:     rgba(107, 124, 147, 0.40);
   --ink-60:          rgba(13, 27, 42, 0.60);
   --signal-60:       rgba(245, 240, 232, 0.60);
+  --ink-75:          rgba(13, 27, 42, 0.75);
+  --signal-75:       rgba(245, 240, 232, 0.75);
 
   /* Strokes */
   --stroke-sm:   0.5px;

@@ -53,6 +53,8 @@
   --slate-ghost:     rgba(107, 124, 147, 0.40);
   --ink-60:          rgba(13, 27, 42, 0.60);
   --signal-60:       rgba(245, 240, 232, 0.60);
+  --ink-75:          rgba(13, 27, 42, 0.75);
+  --signal-75:       rgba(245, 240, 232, 0.75);
 
   /* Strokes */
   --stroke-sm:   0.5px;
@@ -497,10 +499,11 @@ a:hover { color: var(--teal); }
 
 .mmm-body-text {
   font-size: 1.05rem;
+  font-weight: 400;
   line-height: 1.6;
-  color: var(--ink-60);
+  color: var(--ink-75);
 }
-.mmm-body-text.on-dark { color: var(--signal-60); }
+.mmm-body-text.on-dark { color: var(--signal-75); }
 .mmm-body-text.mmm-profile-copy { color: var(--ink); }
 
 .mmm-caption {
@@ -794,7 +797,9 @@ a:hover { color: var(--teal); }
   }
 
   .mmm-header-actions .mmm-button {
-    display: none;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -854,18 +859,18 @@ a:hover { color: var(--teal); }
 
   <!-- Hero -->
   <section class="mmm-section mmm-page-hero">
-    <p class="eyebrow">03 - ABOUT</p>
+    <p class="eyebrow">03 &mdash; ABOUT</p>
     <h1 class="mmm-page-title mt-sm">Walker Zhao</h1>
-    <p style="font-family:var(--labels);font-size:0.95rem;font-weight:400;color:var(--ink);letter-spacing:0.05em;margin-top:0.5rem;">Performance media expert - SEM &amp; Programmatic | Auckland, New Zealand</p>
+    <p style="font-family:var(--labels);font-size:0.95rem;font-weight:400;color:var(--ink);letter-spacing:0.05em;margin-top:0.5rem;">Performance media expert &mdash; SEM &amp; Programmatic | Auckland, New Zealand</p>
     <p class="eyebrow mt-sm">FOUNDER, MIND &amp; METRIC MEDIA</p>
   </section>
 
   <!-- Career Narrative -->
   <section class="mmm-section mmm-two-col">
     <div>
-      <p class="mmm-body-text mmm-profile-copy">The career started in FMCG - Nestl&eacute;, Coca-Cola, Carlsberg, across China. Managing budgets, running campaigns, watching what actually moved volume versus what looked good in a deck. That foundation installs a question that doesn't go away: did this advertising work, or did it just spend?</p>
+      <p class="mmm-body-text mmm-profile-copy">The career started in FMCG &mdash; Nestl&eacute;, Coca-Cola, Carlsberg, across China. Managing budgets, running campaigns, watching what actually moved volume versus what looked good in a deck. That foundation installs a question that doesn't go away: did this advertising work, or did it just spend?</p>
       <p class="mmm-body-text mmm-profile-copy mt-md">New Zealand, 2021. A rapid progression through digital performance: hands-on search management, then leading GroupM Nexus activation teams across paid search, paid social, and programmatic at Mindshare, then Digital Performance Director at WPP Media Australia &amp; New Zealand. A decade inside the largest media networks in the world, running campaigns for clients across travel, retail, automotive, education, and finance.</p>
-      <p class="mmm-body-text mmm-profile-copy mt-md">Mind &amp; Metric Media exists because the question from 2013 still doesn't get answered often enough.</p>
+      <p class="mmm-body-text mmm-profile-copy mt-md">Mind &amp; Metric Media exists because the question from those FMCG years still doesn't get answered often enough.</p>
     </div>
     <div>
       <!-- INSERT: Walker's professional photo — filename: walker-profile.jpg -->
@@ -895,16 +900,23 @@ a:hover { color: var(--teal); }
     <h2 style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;color:var(--signal);margin:0 0 0.5rem;">Awards & recognition</h2>
     <p class="eyebrow">INDUSTRY CREDENTIALS</p>
     <div class="mmm-credential-list">
-      <p>- Winner - Google Honours Agency SuperStar Award, Q2 2025</p>
-      <p>- Finalist - IAB New Zealand Digital Advertising Awards, Best Performance Campaign, 2023</p>
-      <p>- Finalist - IAB New Zealand Digital Advertising Awards, Emerging Talent, 2023</p>
+      <p>&mdash; Winner &mdash; Google Honours Agency SuperStar Award, Q2 2025</p>
+      <p>&mdash; Finalist &mdash; IAB New Zealand Digital Advertising Awards, Best Performance Campaign, 2023</p>
+      <p>&mdash; Finalist &mdash; IAB New Zealand Digital Advertising Awards, Emerging Talent, 2023</p>
     </div>
+  </section>
+
+  <!-- Method as proof -->
+  <section class="mmm-panel-dark">
+    <h2 style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;color:var(--signal);margin:0 0 0.5rem;">How the work gets proven</h2>
+    <p class="eyebrow">METHOD, NOT PROMISES</p>
+    <p class="mmm-body-text on-dark mt-sm">Every engagement starts by measuring what current spend actually drives. The first deliverable is evidence, not a plan &mdash; and every result after that is reported in plain numbers a CFO can interrogate.</p>
   </section>
 
   <!-- Award Photos — 6-photo grid -->
   <section style="margin:16px;padding:40px 36px;background:var(--midnight);">
     <h2 style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;color:var(--signal);margin:0 0 0.25rem;">Recognition</h2>
-    <p class="eyebrow" style="margin-bottom:0;">04 - IN THE ROOM</p>
+    <p class="eyebrow" style="margin-bottom:0;">04 &mdash; IN THE ROOM</p>
     <div class="mmm-award-grid">
 
       <div class="mmm-award-item">
@@ -988,7 +1000,7 @@ a:hover { color: var(--teal); }
       </nav>
       <a href="mailto:enquiries@mindandmetricmedia.co.nz" class="mmm-footer-email">enquiries@mindandmetricmedia.co.nz</a>
     </div>
-    <p class="mmm-footer-legal">Auckland, New Zealand - &copy; 2026 Mind &amp; Metric Media Limited</p>
+    <p class="mmm-footer-legal">Auckland, New Zealand &mdash; &copy; 2026 Mind &amp; Metric Media Limited</p>
   </div>
 </footer>
 
