@@ -142,10 +142,48 @@
     <p class="mmm-body-text mt-sm">Mind &amp; Metric Media manages the media end to end, or audits what's already running. Both engagements start with the same question: what is this spend actually driving?</p>
   </section>
 
+  <!-- Switch-off test band -->
+  <section class="mmm-panel-dark">
+    <div class="mmm-switchoff">
+      <div>
+        <p class="eyebrow">THE TEST PLATFORMS DON'T OFFER</p>
+        <h2 class="mmm-switchoff-headline">Switch it off.<br>Watch what happens.</h2>
+        <p class="mmm-body-text on-dark">Dashboards report what ran. Only a switch-off test shows what stops. The gap between the two is where every engagement here begins.</p>
+      </div>
+      <div class="mmm-switchoff-chart">
+        <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative chart: ad spend is switched off at week six, yet revenue continues almost unchanged — the gap platforms never show">
+          <!-- gridlines -->
+          <g stroke="rgba(107,124,147,0.18)" stroke-width="1">
+            <line x1="48" y1="60" x2="700" y2="60"/>
+            <line x1="48" y1="120" x2="700" y2="120"/>
+            <line x1="48" y1="180" x2="700" y2="180"/>
+            <line x1="48" y1="240" x2="700" y2="240"/>
+          </g>
+          <!-- baseline -->
+          <line x1="48" y1="280" x2="700" y2="280" stroke="rgba(107,124,147,0.4)" stroke-width="1"/>
+          <!-- switch-off marker -->
+          <line x1="360" y1="44" x2="360" y2="280" stroke="rgba(245,240,232,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <text x="368" y="56" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="#F5F0E8" opacity="0.7">SPEND OFF</text>
+          <!-- revenue line (signal) -->
+          <path d="M48 96 C 90 92, 120 100, 160 95 S 240 88, 290 94 S 340 90, 360 92 C 385 96, 400 108, 430 106 S 500 96, 545 100 S 655 94, 700 97"
+                fill="none" stroke="#F5F0E8" stroke-width="3" stroke-linecap="round"/>
+          <text x="48" y="80" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="#F5F0E8">REVENUE</text>
+          <!-- spend line (gold) -->
+          <path d="M48 210 C 100 206, 150 212, 200 208 S 310 206, 358 208 L 362 278 L 700 278"
+                fill="none" stroke="#F0B429" stroke-width="3" stroke-linecap="round"/>
+          <text x="48" y="196" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="#F0B429">AD SPEND</text>
+          <!-- annotation: the gap -->
+          <text x="480" y="252" font-family="'Space Grotesk', sans-serif" font-size="12" letter-spacing="1" fill="#6B7C93">WHAT WAS IT BUYING?</text>
+        </svg>
+        <p class="mmm-switchoff-caption">Illustrative &mdash; the shape many accounts discover on their first controlled test</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Service 1 & 2 -->
   <div class="mmm-services-grid">
     <div class="mmm-card">
-      <h2 style="font-family:var(--display);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:600;color:var(--signal);margin:0 0 0.5rem;">Search Engine Marketing</h2>
+      <h2 class="mmm-card-title">Search Engine Marketing</h2>
       <p class="eyebrow">SEM &mdash; GOOGLE &amp; BING</p>
       <p style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:500;color:var(--signal);margin:0.75rem 0 1rem;line-height:1.3;">Paid search across Google and Bing. Strategy through to execution.</p>
       <div class="mmm-mini-chart" role="img" aria-label="Illustrative comparison: platform-reported conversions versus the smaller share that is actually incremental">
@@ -173,7 +211,7 @@
     </div>
 
     <div class="mmm-card-light">
-      <h2 style="font-family:var(--display);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:600;color:var(--ink);margin:0 0 0.5rem;">Consultation &amp; Audit</h2>
+      <h2 class="mmm-card-title">Consultation &amp; Audit</h2>
       <p class="eyebrow">INDEPENDENT REVIEW</p>
       <p style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:500;color:var(--ink);margin:0.75rem 0 1rem;line-height:1.3;">A second opinion on what's already running, before you commit to more.</p>
       <div class="mmm-flow">
@@ -201,7 +239,7 @@
 
   <!-- How It Works -->
   <section class="mmm-panel-dark">
-    <h2 style="font-family:var(--display);font-size:clamp(1.3rem,2vw,1.7rem);font-weight:600;color:var(--signal);margin:0 0 0.5rem;">How it works</h2>
+    <h2 class="mmm-h2-sm on-dark">How it works</h2>
       <p class="eyebrow">ENGAGEMENT MODEL</p>
     <p class="mmm-body-text on-dark mt-sm">Retainer or project. No lock-in contracts. All reporting in plain numbers &mdash; no proprietary dashboards designed to obscure the answer.</p>
     <div class="mmm-cta-row">
@@ -212,7 +250,7 @@
   <!-- FAQ -->
   <section class="mmm-section">
     <p class="eyebrow">COMMON QUESTIONS</p>
-    <h2 style="font-family:var(--display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600;color:var(--ink);margin:1rem 0 0.5rem;">Questions worth asking any agency</h2>
+    <h2 class="mmm-h2 tight">Questions worth asking any agency</h2>
     <div class="mmm-faq-list">
       <details class="mmm-faq-item">
         <summary>What is incrementality testing?</summary>

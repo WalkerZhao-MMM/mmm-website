@@ -103,7 +103,7 @@
     </div>
     <div>
       <!-- INSERT: Walker's professional photo — filename: walker-profile.jpg -->
-      <div class="mmm-lightbox-trigger" onclick="document.getElementById('profile-lightbox').classList.add('active')">
+      <div class="mmm-lightbox-trigger" onclick="document.getElementById('profile-lightbox').classList.add('active')" tabindex="0" role="button" aria-label="View larger photo of Walker Zhao">
         <img
           src="images/walker-profile.jpg"
           width="800" height="800"
@@ -127,7 +127,7 @@
 
   <!-- Credentials -->
   <section class="mmm-panel-dark">
-    <h2 style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;color:var(--signal);margin:0 0 0.5rem;">Awards & recognition</h2>
+    <h2 class="mmm-h2-sm on-dark">Awards & recognition</h2>
     <p class="eyebrow">INDUSTRY CREDENTIALS</p>
     <div class="mmm-credential-list">
       <p>&mdash; Winner &mdash; Google Honours Agency SuperStar Award, Q2 2025</p>
@@ -137,14 +137,14 @@
 
   <!-- Method as proof -->
   <section class="mmm-panel-dark">
-    <h2 style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;color:var(--signal);margin:0 0 0.5rem;">How the work gets proven</h2>
+    <h2 class="mmm-h2-sm on-dark">How the work gets proven</h2>
     <p class="eyebrow">METHOD, NOT PROMISES</p>
     <p class="mmm-body-text on-dark mt-sm">Every engagement starts by measuring what current spend actually drives. The first deliverable is evidence, not a plan &mdash; and every result after that is reported in plain numbers a CFO can interrogate.</p>
   </section>
 
   <!-- Award Photos — 6-photo grid -->
   <section style="margin:16px;padding:40px 36px;background:var(--midnight);">
-    <h2 style="font-family:var(--display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;color:var(--signal);margin:0 0 0.25rem;">Recognition</h2>
+    <h2 class="mmm-h2-sm on-dark">Recognition</h2>
     <p class="eyebrow" style="margin-bottom:0;">IN THE ROOM</p>
     <div class="mmm-award-grid">
 
@@ -153,6 +153,7 @@
           src="images/google-honours-winner-card.jpg"
           width="900" height="1600"
           onclick="openLightbox(this.src, this.alt)"
+          tabindex="0" role="button"
           alt="Google Honours Agency SuperStar Award 2025 — official winner announcement, Walker Zhao"
           class="contain"
           loading="lazy"
@@ -165,6 +166,7 @@
           src="images/iab-2023-shortlist.jpg"
           width="561" height="530"
           onclick="openLightbox(this.src, this.alt)"
+          tabindex="0" role="button"
           alt="IAB 2023 Emerging Talent shortlist — Walker Zhao, GroupM NZ"
           class="contain"
           style="background:#b8922a;"
@@ -178,6 +180,7 @@
           src="images/google-honours-hq-outside.jpg"
           width="1050" height="1400"
           onclick="openLightbox(this.src, this.alt)"
+          tabindex="0" role="button"
           alt="Walker Zhao at Google HQ Mountain View — Google Honours trip 2026"
           class="contain"
           loading="lazy"
@@ -190,6 +193,7 @@
           src="images/google-honours-hq-staircase.jpg"
           width="1200" height="904"
           onclick="openLightbox(this.src, this.alt)"
+          tabindex="0" role="button"
           alt="Google Honours winners at Google HQ staircase, Mountain View 2026"
           loading="lazy"
         >
@@ -201,6 +205,7 @@
           src="images/google-honours-hq-interior.jpg"
           width="904" height="1200"
           onclick="openLightbox(this.src, this.alt)"
+          tabindex="0" role="button"
           alt="Google Honours cohort inside Google HQ, Mountain View 2026"
           loading="lazy"
         >
@@ -212,6 +217,7 @@
           src="images/iab-awards-event.jpg"
           width="1400" height="933"
           onclick="openLightbox(this.src, this.alt)"
+          tabindex="0" role="button"
           alt="IAB New Zealand Digital Advertising Awards 2023 — Walker Zhao and team"
           loading="lazy"
         >
@@ -264,6 +270,10 @@ document.addEventListener('keydown', function(e) {
     closeLightbox();
     var pb = document.getElementById('profile-lightbox');
     if (pb) pb.classList.remove('active');
+  }
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.getAttribute && e.target.getAttribute('role') === 'button' && e.target.hasAttribute('onclick')) {
+    e.preventDefault();
+    e.target.click();
   }
 });
 </script>

@@ -173,6 +173,9 @@ document.getElementById('mmm-contact-form').addEventListener('submit', function 
       if (result.success) {
         form.style.display = 'none';
         successEl.style.display = 'block';
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { method: 'contact_form' });
+        }
       } else {
         throw new Error(result.message || 'Submission failed');
       }

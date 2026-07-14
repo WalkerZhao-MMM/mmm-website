@@ -1119,3 +1119,71 @@ a:hover { color: var(--teal); }
 #profile-lightbox.active img {
   transform: scale(1);
 }
+
+/* ============================================================
+   Section heading utilities
+   ============================================================ */
+
+.mmm-h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--ink);
+  margin: 1rem 0 1.5rem;
+}
+.mmm-h2.tight { margin-bottom: 0.5rem; }
+.mmm-h2-sm {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+}
+.mmm-h2.on-dark,
+.mmm-h2-sm.on-dark { color: var(--signal); }
+.mmm-h2-sm.spaced { margin: 2rem 0 1rem; }
+.mmm-section > .mmm-h2-sm.spaced:first-of-type { margin-top: 0; }
+.mmm-card-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin: 0 0 0.5rem;
+}
+
+/* ============================================================
+   Services page: switch-off test band
+   ============================================================ */
+
+.mmm-switchoff {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 48px;
+  align-items: center;
+}
+.mmm-switchoff-headline {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--signal);
+  margin: 1rem 0 1.25rem;
+}
+.mmm-switchoff-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.mmm-switchoff-caption {
+  font-family: var(--labels);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 12px;
+}
+@media (max-width: 768px) {
+  .mmm-switchoff {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
