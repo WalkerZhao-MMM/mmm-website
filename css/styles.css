@@ -1157,12 +1157,31 @@ a:hover { color: var(--teal); }
    ============================================================ */
 
 .mmm-finding-row {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  align-items: center;
   padding: 28px 0;
   border-bottom: var(--stroke-sm) solid var(--slate-ghost);
   text-decoration: none;
 }
 .mmm-finding-row:last-child { border-bottom: none; }
+.mmm-finding-thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gold-ghost);
+  display: block;
+}
+@media (max-width: 768px) {
+  .mmm-finding-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .mmm-finding-thumb { order: -1; }
+}
 .mmm-finding-num {
   font-family: var(--labels);
   font-size: 0.7rem;

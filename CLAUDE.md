@@ -63,6 +63,9 @@ mmm-website/
 - Institutional tone. "Mind & Metric Media" not "we" or "I".
 - Metric-first language. No jargon without an outcome attached.
 - Bullet points use — (em dash) only. No dots, arrows, chevrons.
+- In prose, use em dashes sparingly: at most one per paragraph, and prefer
+  periods, colons, or commas. Dense em dash use reads as AI-generated writing
+  (owner directive, July 2026). This applies especially to articles/Findings.
 - No emoji anywhere. No exclamation marks anywhere.
 - Credentials stated once, factually, near the top.
 - No "data-driven", "unlock", "discover", "empower", "leverage", "strategic partner", "Auckland's best", "full-service".
