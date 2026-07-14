@@ -198,7 +198,8 @@ Brands that have run programmatic and found the results beautiful but unexplaina
 ### How It Works
 Dark panel.
 Label: "03 — HOW IT WORKS"
-Body: Retainer or project. No lock-in contracts. All reporting in plain numbers — no proprietary dashboards designed to obscure the answer.
+Body: Audit projects, or managed media scoped to the measurement question — typically six to twelve months, long enough for incrementality tests to read true. All reporting in plain numbers — no proprietary dashboards designed to obscure the answer.
+(Do not claim "no lock-in contracts" anywhere — Walker signs 6–12 month terms with the right clients.)
 
 CTA: "BOOK A DIAGNOSTIC CALL →" links to contact.html
 

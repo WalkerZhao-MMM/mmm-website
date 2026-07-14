@@ -819,6 +819,7 @@ a:hover { color: var(--teal); }
 .mmm-profile-photo {
   width: 100%;
   max-width: 340px;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center top;
@@ -843,6 +844,7 @@ a:hover { color: var(--teal); }
 /* Photo images: landscape crop */
 .mmm-award-item img {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center;
@@ -1148,6 +1150,86 @@ a:hover { color: var(--teal); }
   font-weight: 600;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   margin: 0 0 0.5rem;
+}
+
+/* ============================================================
+   Findings: listing + article
+   ============================================================ */
+
+.mmm-finding-row {
+  display: block;
+  padding: 28px 0;
+  border-bottom: var(--stroke-sm) solid var(--slate-ghost);
+  text-decoration: none;
+}
+.mmm-finding-row:last-child { border-bottom: none; }
+.mmm-finding-num {
+  font-family: var(--labels);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0;
+}
+.mmm-finding-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 8px 0 10px;
+}
+.mmm-finding-row:hover .mmm-finding-title { color: var(--teal); }
+.mmm-finding-excerpt {
+  font-size: 1.02rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink-75);
+  margin: 0 0 10px;
+  max-width: 720px;
+}
+.mmm-finding-meta {
+  font-family: var(--labels);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 0;
+}
+
+.mmm-article { max-width: 760px; }
+.mmm-article-standfirst {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 1.25rem 0 0;
+}
+.mmm-article-meta {
+  font-family: var(--labels);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 1.25rem;
+}
+.mmm-article-body p {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0 0 1.4rem;
+}
+.mmm-article-body p:last-child { margin-bottom: 0; }
+.mmm-article-body h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  color: var(--ink);
+  margin: 2.4rem 0 1rem;
 }
 
 /* ============================================================
