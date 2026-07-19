@@ -1225,6 +1225,26 @@ a:hover { color: var(--teal); }
   margin-right: auto;
 }
 .mmm-page-hero .mmm-body-text { max-width: 75ch; }
+
+/* ---- Section rhythm: wider breaks between top-level blocks --------- */
+main > section + section,
+main > section + picture,
+main > picture + section,
+main > div + section,
+main > section + div {
+  margin-top: 40px;
+}
+.mmm-banner-frame + .mmm-callout { margin-top: 16px; }
+@media (max-width: 768px) {
+  main > section + section,
+  main > section + picture,
+  main > picture + section,
+  main > div + section,
+  main > section + div {
+    margin-top: 28px;
+  }
+  .mmm-banner-frame + .mmm-callout { margin-top: 8px; }
+}
 .mmm-article-standfirst {
   font-family: var(--display);
   font-weight: 500;
