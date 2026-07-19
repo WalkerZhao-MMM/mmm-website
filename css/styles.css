@@ -1234,7 +1234,8 @@ main > div + section,
 main > section + div {
   margin-top: 40px;
 }
-.mmm-banner-frame + .mmm-callout { margin-top: 16px; }
+.mmm-banner-frame + .mmm-callout,
+.mmm-banner-frame + .mmm-panel-dark { margin-top: 16px; }
 @media (max-width: 768px) {
   main > section + section,
   main > section + picture,
@@ -1243,7 +1244,8 @@ main > section + div {
   main > section + div {
     margin-top: 28px;
   }
-  .mmm-banner-frame + .mmm-callout { margin-top: 8px; }
+  .mmm-banner-frame + .mmm-callout,
+  .mmm-banner-frame + .mmm-panel-dark { margin-top: 8px; }
 }
 .mmm-article-standfirst {
   font-family: var(--display);
