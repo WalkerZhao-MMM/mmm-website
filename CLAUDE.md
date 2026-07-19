@@ -65,7 +65,10 @@ mmm-website/
 - Bullet points use — (em dash) only. No dots, arrows, chevrons.
 - In prose, use em dashes sparingly: at most one per paragraph, and prefer
   periods, colons, or commas. Dense em dash use reads as AI-generated writing
-  (owner directive, July 2026). This applies especially to articles/Findings.
+  (owner directive, July 2026). This applies especially to articles.
+- The content section is named "Two Cents" (business-casual, owner's choice) at
+  /two-cents.html with articles under /two-cents/. Articles are numbered
+  "NO. 001", "NO. 002", etc. Do not rename it back to Findings/Insights/Blog.
 - No emoji anywhere. No exclamation marks anywhere.
 - Credentials stated once, factually, near the top.
 - No "data-driven", "unlock", "discover", "empower", "leverage", "strategic partner", "Auckland's best", "full-service".
