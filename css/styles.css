@@ -28,6 +28,7 @@
 
   /* ── Alphas ──────────────────────────────────────────────── */
   --gold-ghost:      rgba(240, 180, 41, 0.25);
+  --gold-edge:       rgba(240, 180, 41, 0.45);
   --teal-ghost:      rgba(0, 201, 177, 0.20);
   --slate-ghost:     rgba(107, 124, 147, 0.40);
   --ink-60:          rgba(13, 27, 42, 0.60);
@@ -1226,6 +1227,45 @@ a:hover { color: var(--teal); }
 }
 .mmm-page-hero .mmm-body-text { max-width: 75ch; }
 
+/* ---- Chapter dividers (between top-level sections) ----------------- */
+.mmm-chapter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 64px 32px 24px;
+}
+.mmm-chapter .line {
+  flex: 1;
+  height: 2px;
+  border-radius: 1px;
+  background: rgba(245, 240, 232, 0.4);
+}
+.mmm-chapter .label {
+  font-family: var(--labels);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--signal-75);
+  white-space: nowrap;
+}
+main > .mmm-chapter + section,
+main > .mmm-chapter + picture {
+  margin-top: 16px;
+}
+@media (max-width: 768px) {
+  .mmm-chapter { margin: 44px 20px 16px; }
+}
+
+/* ---- Dark panels: brighter edge so they lift off the background ---- */
+.mmm-callout,
+.mmm-stat-block,
+.mmm-panel-dark,
+.mmm-card,
+.mmm-banner-frame {
+  border-color: var(--gold-edge);
+}
+
 /* ---- Section rhythm: wider breaks between top-level blocks --------- */
 main > section + section,
 main > section + picture,
@@ -1284,11 +1324,33 @@ main > section + div {
    Services page: switch-off test band
    ============================================================ */
 
-.mmm-switchoff {
+.mmm-switchoff-grid {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px;
+  align-items: stretch;
+}
+.mmm-switchoff-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 48px 40px;
+}
+.mmm-switchoff-chart {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .mmm-switchoff-grid {
+    grid-template-columns: 1fr;
+    margin: 8px;
+  }
+  .mmm-switchoff-text { padding: 36px 24px; }
+  .mmm-switchoff-chart { padding: 28px 20px; }
 }
 .mmm-switchoff-headline {
   font-family: var(--display);
@@ -1296,7 +1358,7 @@ main > section + div {
   font-size: clamp(1.6rem, 3.2vw, 2.6rem);
   line-height: 1.15;
   color: var(--signal);
-  margin: 1rem 0 1.25rem;
+  margin: 0;
 }
 .mmm-switchoff-chart svg {
   display: block;
@@ -1312,8 +1374,5 @@ main > section + div {
   margin-top: 12px;
 }
 @media (max-width: 768px) {
-  .mmm-switchoff {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
+  .mmm-switchoff-headline { margin: 0; }
 }
