@@ -155,7 +155,7 @@
       <!-- Curve: conversions(spend) = 180 + 900 * (1 - e^(-spend/28000)), spend 0..80000.
            Path below is precomputed from that formula so the chart still renders without JS;
            the same constants drive the readout in the script at the foot of this page. -->
-      <svg id="mmm-curve" class="mmm-curve-svg" viewBox="0 0 720 348" xmlns="http://www.w3.org/2000/svg"
+      <svg id="mmm-curve" class="mmm-curve-svg" viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg"
            role="slider" tabindex="0"
            aria-label="Monthly paid media spend. Use arrow keys to change."
            aria-valuemin="0" aria-valuemax="80000" aria-valuenow="24000"
@@ -170,11 +170,11 @@
         <text class="mmm-curve-annot" x="60" y="44" fill="#6B7C93">CONVERSIONS</text>
         <g fill="#6B7C93">
           <text class="mmm-curve-axis" x="60" y="322">$0</text>
-          <text class="mmm-curve-axis" x="216" y="322">$20k</text>
-          <text class="mmm-curve-axis" x="376" y="322">$40k</text>
-          <text class="mmm-curve-axis" x="536" y="322">$60k</text>
-          <text class="mmm-curve-axis" x="668" y="322">$80k</text>
-          <text class="mmm-curve-annot" x="60" y="343">MONTHLY SPEND</text>
+          <text class="mmm-curve-axis" x="220" y="322" text-anchor="middle">$20k</text>
+          <text class="mmm-curve-axis" x="380" y="322" text-anchor="middle">$40k</text>
+          <text class="mmm-curve-axis" x="540" y="322" text-anchor="middle">$60k</text>
+          <text class="mmm-curve-axis" x="700" y="322" text-anchor="end">$80k</text>
+          <text class="mmm-curve-annot" x="60" y="360">MONTHLY SPEND</text>
         </g>
 
         <!-- the curve -->

@@ -832,6 +832,77 @@ a:hover { color: var(--teal); }
   transition: opacity 0.15s ease;
 }
 .mmm-profile-photo:hover { opacity: 0.88; }
+
+/* ---- Profile reveal (silhouette, click to unmask) ------------------ */
+.mmm-profile-frame {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+}
+.mmm-reveal-cover {
+  /* Hidden until the script opts in, so no-JS visitors just get the photo. */
+  display: none;
+}
+.js-reveal .mmm-reveal-cover {
+  display: flex;
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 20px 16px;
+  background: var(--panel-dark);
+  border: 1px solid var(--gold-edge);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  font: inherit;
+  color: var(--gold);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.js-reveal.is-revealed .mmm-reveal-cover {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+.mmm-reveal-chimp {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 6px;
+}
+.mmm-reveal-qmark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 168px;
+}
+.mmm-reveal-question {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  color: var(--signal);
+  margin: 0;
+}
+.mmm-reveal-cue {
+  font-family: var(--labels);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 6px 0 0;
+}
+.js-reveal .mmm-reveal-cover:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .mmm-reveal-cover { transition: opacity 0.01s linear; }
+  .js-reveal.is-revealed .mmm-reveal-cover { transform: none; }
+}
 .mmm-lightbox-trigger { display: flex; justify-content: center; align-items: flex-start; }
 .mmm-award-grid {
   display: grid;
@@ -1412,7 +1483,7 @@ main > section + div {
   text-transform: uppercase;
   color: var(--slate);
   text-align: center;
-  margin: 4px 0 0;
+  margin: 18px 0 0;
 }
 .mmm-curve-readout {
   display: grid;
