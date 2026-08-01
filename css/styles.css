@@ -844,14 +844,10 @@ a:hover { color: var(--teal); }
   display: none;
 }
 .js-reveal .mmm-reveal-cover {
-  display: flex;
+  display: block;
   position: absolute;
   inset: 0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 20px 16px;
+  padding: 0;
   background: var(--panel-dark);
   border: 1px solid var(--gold-edge);
   border-radius: var(--radius-md);
@@ -859,7 +855,6 @@ a:hover { color: var(--teal); }
   cursor: pointer;
   text-align: center;
   font: inherit;
-  color: var(--gold);
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 .js-reveal.is-revealed .mmm-reveal-cover {
@@ -867,33 +862,47 @@ a:hover { color: var(--teal); }
   transform: scale(1.04);
   pointer-events: none;
 }
-.mmm-reveal-chimp {
+.mmm-reveal-art {
   display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  margin-bottom: 6px;
+  height: 100%;
+  object-fit: cover;
 }
-.mmm-reveal-qmark {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 168px;
+/* Gradient rather than a solid bar, so the artwork fades under the caption
+   instead of being cut off at a hard edge. */
+.mmm-reveal-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  padding: 40px 16px 16px;
+  background: linear-gradient(
+    to top,
+    rgba(13, 27, 42, 0.97) 0%,
+    rgba(13, 27, 42, 0.92) 45%,
+    rgba(13, 27, 42, 0) 100%
+  );
 }
 .mmm-reveal-question {
+  display: block;
   font-family: var(--display);
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.25;
   color: var(--signal);
-  margin: 0;
 }
 .mmm-reveal-cue {
+  display: block;
   font-family: var(--labels);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--slate);
-  margin: 6px 0 0;
+  color: var(--gold);
+  margin-top: 6px;
 }
 .js-reveal .mmm-reveal-cover:focus-visible {
   outline: 2px solid var(--gold);
