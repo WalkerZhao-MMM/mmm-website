@@ -13,6 +13,7 @@
   --signal:      #F5F0E8;
   --ink:         #0D1B2A;
   --gold:        #F0B429;
+  --gold-deep:   #C68F14;
   --teal:        #00C9B1;
   --slate:       #6B7C93;
   --panel-dark:  #132336;
@@ -1364,6 +1365,96 @@ main > section + div {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* ---- Interactive spend curve --------------------------------------- */
+.mmm-curve-svg {
+  cursor: crosshair;
+  touch-action: pan-y;
+  outline: none;
+}
+/* SVG font sizes are in viewBox units, so their on-screen size depends on how
+   far the 720-unit chart has been scaled. The card jumps between half and full
+   width at the layout breakpoint, so a viewport media query can't track it —
+   the script sets --curve-label-size from the chart's measured width instead.
+   The fallback below is tuned for the desktop half-width card. */
+.mmm-curve-svg text { font-family: var(--labels); }
+.mmm-curve-axis {
+  font-size: var(--curve-label-size, 15px);
+  letter-spacing: 0.05em;
+}
+.mmm-curve-annot {
+  font-size: var(--curve-label-size, 15px);
+  font-weight: 600;
+  letter-spacing: 0.11em;
+}
+.mmm-curve-svg:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+/* No transition on the marker: it tracks the cursor, and any easing reads as lag. */
+#mmm-curve-halo {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+.mmm-curve-svg.is-pinned #mmm-curve-halo { opacity: 0.6; }
+.mmm-curve-svg.is-pinned { cursor: pointer; }
+@media (prefers-reduced-motion: reduce) {
+  #mmm-curve-halo { transition: none; }
+}
+.mmm-curve-hint {
+  font-family: var(--labels);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: center;
+  margin: 4px 0 0;
+}
+.mmm-curve-readout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--slate-ghost);
+  border: 1px solid var(--slate-ghost);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-top: 20px;
+}
+.mmm-curve-stat {
+  background: var(--signal);
+  padding: 14px 16px;
+}
+.mmm-curve-stat-label {
+  font-family: var(--labels);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 0 0 4px;
+}
+.mmm-curve-stat-value {
+  font-family: var(--data);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1;
+  color: var(--ink);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.mmm-curve-stat.spend .mmm-curve-stat-value { color: var(--gold-deep); }
+.mmm-curve-stat.reported .mmm-curve-stat-value { color: var(--slate); }
+.mmm-curve-stat.truth {
+  background: var(--ink);
+}
+.mmm-curve-stat.truth .mmm-curve-stat-label { color: var(--signal-60); }
+.mmm-curve-stat.truth .mmm-curve-stat-value { color: var(--gold); }
+@media (max-width: 480px) {
+  .mmm-curve-readout { grid-template-columns: 1fr; }
 }
 .mmm-switchoff-caption {
   font-family: var(--labels);

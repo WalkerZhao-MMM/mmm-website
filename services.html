@@ -149,34 +149,65 @@
   <div class="mmm-switchoff-grid">
     <div class="mmm-card mmm-switchoff-text">
       <h2 class="mmm-switchoff-headline">Switch it off.<br>Watch what happens.</h2>
-      <p class="mmm-body-text on-dark">Dashboards report what ran. Only a switch-off test shows what stops. The gap between the two is where every engagement here begins.</p>
+      <p class="mmm-body-text on-dark">Every account has a level of demand that arrives with or without paid media. Platforms count those conversions too, then call the total performance. The gap between the cost they report and the cost after that baseline is where every engagement here begins.</p>
     </div>
     <div class="mmm-card-light mmm-switchoff-chart">
-      <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative chart: ad spend is switched off partway through, yet revenue continues almost unchanged — the gap platforms never show">
-        <!-- gridlines -->
-        <g stroke="rgba(107,124,147,0.22)" stroke-width="1">
-          <line x1="48" y1="60" x2="700" y2="60"/>
-          <line x1="48" y1="120" x2="700" y2="120"/>
-          <line x1="48" y1="180" x2="700" y2="180"/>
-          <line x1="48" y1="240" x2="700" y2="240"/>
+      <!-- Curve: conversions(spend) = 180 + 900 * (1 - e^(-spend/28000)), spend 0..80000.
+           Path below is precomputed from that formula so the chart still renders without JS;
+           the same constants drive the readout in the script at the foot of this page. -->
+      <svg id="mmm-curve" class="mmm-curve-svg" viewBox="0 0 720 348" xmlns="http://www.w3.org/2000/svg"
+           role="slider" tabindex="0"
+           aria-label="Monthly paid media spend. Use arrow keys to change."
+           aria-valuemin="0" aria-valuemax="80000" aria-valuenow="24000"
+           aria-valuetext="$24,000 a month: 710 conversions, true cost per conversion $45">
+        <!-- baseline band: conversions that arrive with no spend -->
+        <rect x="60" y="259.5" width="640" height="40.5" fill="rgba(107,124,147,0.16)"/>
+        <line x1="60" y1="259.5" x2="700" y2="259.5" stroke="rgba(13,27,42,0.35)" stroke-width="1" stroke-dasharray="5 4"/>
+        <text class="mmm-curve-annot" x="70" y="282" fill="#6B7C93">HAPPENS ANYWAY</text>
+
+        <!-- axes -->
+        <line x1="60" y1="300" x2="700" y2="300" stroke="rgba(13,27,42,0.35)" stroke-width="1"/>
+        <text class="mmm-curve-annot" x="60" y="44" fill="#6B7C93">CONVERSIONS</text>
+        <g fill="#6B7C93">
+          <text class="mmm-curve-axis" x="60" y="322">$0</text>
+          <text class="mmm-curve-axis" x="216" y="322">$20k</text>
+          <text class="mmm-curve-axis" x="376" y="322">$40k</text>
+          <text class="mmm-curve-axis" x="536" y="322">$60k</text>
+          <text class="mmm-curve-axis" x="668" y="322">$80k</text>
+          <text class="mmm-curve-annot" x="60" y="343">MONTHLY SPEND</text>
         </g>
-        <!-- baseline -->
-        <line x1="48" y1="280" x2="700" y2="280" stroke="rgba(13,27,42,0.35)" stroke-width="1"/>
-        <!-- switch-off marker -->
-        <line x1="360" y1="44" x2="360" y2="280" stroke="rgba(13,27,42,0.35)" stroke-width="1.5" stroke-dasharray="5 5"/>
-        <text x="368" y="56" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="#0D1B2A" opacity="0.7">SPEND OFF</text>
-        <!-- revenue line (ink) -->
-        <path d="M48 96 C 90 92, 120 100, 160 95 S 240 88, 290 94 S 340 90, 360 92 C 385 96, 400 108, 430 106 S 500 96, 545 100 S 655 94, 700 97"
-              fill="none" stroke="#0D1B2A" stroke-width="3" stroke-linecap="round"/>
-        <text x="48" y="80" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="#0D1B2A">REVENUE</text>
-        <!-- spend line (gold) -->
-        <path d="M48 210 C 100 206, 150 212, 200 208 S 310 206, 358 208 L 362 278 L 700 278"
-              fill="none" stroke="#C68F14" stroke-width="3" stroke-linecap="round"/>
-        <text x="48" y="196" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="#C68F14">AD SPEND</text>
-        <!-- annotation: the gap -->
-        <text x="480" y="252" font-family="'Space Grotesk', sans-serif" font-size="12" letter-spacing="1" fill="#6B7C93">WHAT WAS IT BUYING?</text>
+
+        <!-- the curve -->
+        <path d="M60 259.5 L80 242.2 L100 226.4 L120 211.9 L140 198.7 L180 175.5 L220 156.1 L260 139.9 L300 126.3 L340 115 L380 105.5 L420 97.6 L460 90.9 L500 85.4 L540 80.8 L580 76.9 L620 73.6 L660 70.9 L700 68.6"
+              fill="none" stroke="#0D1B2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- readout marker -->
+        <line id="mmm-curve-guide" x1="253.6" y1="143.7" x2="253.6" y2="300" stroke="rgba(13,27,42,0.4)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <circle id="mmm-curve-halo" cx="253.6" cy="143.7" r="15" fill="none" stroke="#C68F14" stroke-width="1.5"/>
+        <circle id="mmm-curve-marker" cx="253.6" cy="143.7" r="8" fill="#F0B429" stroke="#0D1B2A" stroke-width="2.5"/>
       </svg>
-      <p class="mmm-switchoff-caption">Illustrative &mdash; the shape many accounts discover on their first controlled test</p>
+      <p class="mmm-curve-hint" id="mmm-curve-hint">Choose the volume you're planning for</p>
+
+      <div class="mmm-curve-readout">
+        <div class="mmm-curve-stat spend">
+          <p class="mmm-curve-stat-label">Monthly spend</p>
+          <p class="mmm-curve-stat-value" id="mmm-stat-spend">$24,000</p>
+        </div>
+        <div class="mmm-curve-stat">
+          <p class="mmm-curve-stat-label">Conversions</p>
+          <p class="mmm-curve-stat-value" id="mmm-stat-conv">710</p>
+        </div>
+        <div class="mmm-curve-stat reported">
+          <p class="mmm-curve-stat-label">CPA as reported</p>
+          <p class="mmm-curve-stat-value" id="mmm-stat-reported">$33.80</p>
+        </div>
+        <div class="mmm-curve-stat truth">
+          <p class="mmm-curve-stat-label">CPA after baseline</p>
+          <p class="mmm-curve-stat-value" id="mmm-stat-true">$45.29</p>
+        </div>
+      </div>
+
+      <p class="mmm-switchoff-caption" id="mmm-curve-caption">Illustrative &mdash; a demand curve with a baseline, the shape most accounts have</p>
     </div>
   </div>
 
@@ -273,6 +304,170 @@
   </section>
 
 </main>
+
+<script>
+(function () {
+  var svg = document.getElementById('mmm-curve');
+  if (!svg) return;
+
+  // Same constants the precomputed path in the markup was drawn from.
+  var BASELINE = 180, CEILING = 900, DECAY = 28000, MAX_SPEND = 80000;
+  var X0 = 60, X1 = 700, Y0 = 300, Y_SPAN = 270, Y_MAX = 1200, VIEW_W = 720;
+  var START_SPEND = 24000, STEP = 2000;
+
+  var marker = document.getElementById('mmm-curve-marker');
+  var halo = document.getElementById('mmm-curve-halo');
+  var guide = document.getElementById('mmm-curve-guide');
+  var hint = document.getElementById('mmm-curve-hint');
+  var elSpend = document.getElementById('mmm-stat-spend');
+  var elConv = document.getElementById('mmm-stat-conv');
+  var elReported = document.getElementById('mmm-stat-reported');
+  var elTrue = document.getElementById('mmm-stat-true');
+  var elCaption = document.getElementById('mmm-curve-caption');
+  var baseCaption = elCaption.textContent;
+
+  var spend = START_SPEND;
+  var pinned = false;
+
+  function conversions(s) { return BASELINE + CEILING * (1 - Math.exp(-s / DECAY)); }
+  function toX(s) { return X0 + (s / MAX_SPEND) * (X1 - X0); }
+  function toY(c) { return Y0 - (c / Y_MAX) * Y_SPAN; }
+
+  function money(v, cents) {
+    return '$' + v.toLocaleString('en-NZ', {
+      minimumFractionDigits: cents ? 2 : 0,
+      maximumFractionDigits: cents ? 2 : 0
+    });
+  }
+
+  function render() {
+    var total = conversions(spend);
+    var incremental = total - BASELINE;
+    var x = toX(spend), y = toY(total);
+
+    marker.setAttribute('cx', x);
+    marker.setAttribute('cy', y);
+    halo.setAttribute('cx', x);
+    halo.setAttribute('cy', y);
+    guide.setAttribute('x1', x);
+    guide.setAttribute('x2', x);
+    guide.setAttribute('y1', y);
+
+    elSpend.textContent = money(spend);
+    elConv.textContent = Math.round(total).toLocaleString('en-NZ');
+
+    if (spend < 500 || incremental < 1) {
+      elReported.textContent = '—';
+      elTrue.textContent = '—';
+      elCaption.textContent = 'Spend switched off — ' + Math.round(total) + ' conversions still arrive.';
+    } else {
+      elReported.textContent = money(spend / total, true);
+      elTrue.textContent = money(spend / incremental, true);
+      var understated = Math.round((total / incremental - 1) * 100);
+      if (understated > 150) {
+        elCaption.textContent = 'At this level most of those conversions would have arrived anyway.';
+      } else if (understated >= 1) {
+        elCaption.textContent = 'The reported cost is understated by ' + understated + '% at this level.';
+      } else {
+        elCaption.textContent = baseCaption;
+      }
+    }
+
+    svg.setAttribute('aria-valuenow', Math.round(spend));
+    svg.setAttribute('aria-valuetext',
+      money(spend) + ' a month: ' + Math.round(total) + ' conversions, ' +
+      (incremental >= 1 ? 'true cost per conversion ' + money(spend / incremental, true)
+                        : 'all of them arriving without spend'));
+  }
+
+  // Measuring the SVG on every pointermove forces a layout read each frame and
+  // makes the marker visibly trail the cursor. Cache it, drop the cache when
+  // anything that could move the element happens.
+  var rect = null;
+  function invalidateRect() { rect = null; }
+  window.addEventListener('resize', invalidateRect);
+  window.addEventListener('scroll', invalidateRect, { passive: true });
+
+  function spendFromClientX(clientX) {
+    if (!rect) rect = svg.getBoundingClientRect();
+    if (!rect.width) return spend;
+    var vx = (clientX - rect.left) * (VIEW_W / rect.width);
+    var t = (vx - X0) / (X1 - X0);
+    return Math.max(0, Math.min(MAX_SPEND, t * MAX_SPEND));
+  }
+
+  // Coalesce moves to one update per frame so the dot stays with the cursor.
+  var queuedX = null, frame = null;
+  function track(clientX) {
+    queuedX = clientX;
+    if (frame) return;
+    frame = requestAnimationFrame(function () {
+      frame = null;
+      spend = spendFromClientX(queuedX);
+      render();
+    });
+  }
+
+  function setPinned(state) {
+    pinned = state;
+    svg.classList.toggle('is-pinned', pinned);
+    hint.textContent = pinned
+      ? 'Locked at this level'
+      : 'Choose the volume you\'re planning for';
+  }
+
+  // Keep SVG labels at a readable on-screen size whatever width the card is.
+  var labelObserver;
+  function sizeLabels() {
+    var w = svg.getBoundingClientRect().width;
+    if (!w) return;
+    var units = 11.5 * (VIEW_W / w);
+    svg.style.setProperty('--curve-label-size', Math.max(13, Math.min(30, units)) + 'px');
+  }
+  if (window.ResizeObserver) {
+    // Hold the reference: an unreferenced observer can be collected and stop firing.
+    labelObserver = new ResizeObserver(sizeLabels);
+    labelObserver.observe(svg);
+  }
+  window.addEventListener('resize', sizeLabels);
+  window.addEventListener('load', sizeLabels);
+  requestAnimationFrame(sizeLabels);
+  sizeLabels();
+
+  svg.addEventListener('pointermove', function (e) {
+    if (!pinned) track(e.clientX);
+  });
+  svg.addEventListener('pointerenter', invalidateRect);
+
+  // Click pins the readout where it is; clicking again hands it back to the cursor.
+  svg.addEventListener('click', function (e) {
+    svg.focus();
+    if (pinned) {
+      setPinned(false);
+      track(e.clientX);
+    } else {
+      track(e.clientX);
+      setPinned(true);
+    }
+  });
+
+  svg.addEventListener('keydown', function (e) {
+    var next = null;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') next = spend + STEP;
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') next = spend - STEP;
+    else if (e.key === 'Home') next = 0;
+    else if (e.key === 'End') next = MAX_SPEND;
+    if (next === null) return;
+    e.preventDefault();
+    spend = Math.max(0, Math.min(MAX_SPEND, next));
+    // Keyboard users aren't hovering, so hold the value they chose.
+    if (!pinned) setPinned(true);
+    render();
+  });
+
+  render();
+})();
+</script>
 
 <footer class="mmm-footer">
   <div class="mmm-container">
