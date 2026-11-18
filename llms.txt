@@ -12,6 +12,16 @@ Mind & Metric Media (MMM — as in Marketing Mix Modeling) is founded and led by
 - [Two Cents](https://www.mindandmetricmedia.co.nz/two-cents.html): Walker Zhao's notes on paid media measurement, automation, and incrementality, including "The Chimpanzee With a Machine Gun" on AI and judgment in advertising, and "Why I Returned My Ray-Ban Meta Glasses After One Day" on AI agents (Meta Muse, Google's Universal Commerce Protocol) and the shift from intent-based to interest-based advertising
 - [Contact](https://www.mindandmetricmedia.co.nz/contact.html): Request a free 30-minute diagnostic call — no pitch, no obligation
 
+## Japanese (日本語)
+
+A full Japanese translation of every page is available under /ja/, with the same content as the English site.
+
+- [ホーム](https://www.mindandmetricmedia.co.nz/ja/)
+- [サービス](https://www.mindandmetricmedia.co.nz/ja/services.html)
+- [代表紹介](https://www.mindandmetricmedia.co.nz/ja/about.html)
+- [Two Cents](https://www.mindandmetricmedia.co.nz/ja/two-cents.html)
+- [お問い合わせ](https://www.mindandmetricmedia.co.nz/ja/contact.html)
+
 ## Contact
 
 - Email: enquiries@mindandmetricmedia.co.nz

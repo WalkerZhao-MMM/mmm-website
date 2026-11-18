@@ -1,7 +1,8 @@
 {
   "redirects": [
-    { "source": "/findings.html", "destination": "/two-cents.html", "permanent": true },
-    { "source": "/findings/:slug*", "destination": "/two-cents/:slug*", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    {"source": "/findings.html", "destination": "/two-cents.html", "permanent": true},
+    {"source": "/findings/:slug*", "destination": "/two-cents/:slug*", "permanent": true},
+    {"source": "/index.html", "destination": "/", "permanent": true},
+    {"source": "/ja/index.html", "destination": "/ja/", "permanent": true}
   ]
 }

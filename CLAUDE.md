@@ -322,3 +322,7 @@ Bottom line (very small, --slate):
 - All files stay in the root mmm-website/ folder
 - Vercel will auto-detect and serve index.html as the root
 - No vercel.json config needed for a pure static site
+
+## Japanese site (/ja/)
+
+Every English page has a 1:1 Japanese mirror under /ja/ with the same filename (articles under /ja/two-cents/). When an English page or article is added or edited, update its Japanese counterpart, the hreflang links on both, and sitemap.xml. Japanese style: site pages use です・ます, Two Cents articles use である調; write 貴社 (not 御社); use practitioner terms (リスティング広告, 管理画面上のCPA, 指名検索, 部分一致, インクリメンタリティ（増分効果）検証). Budgets on Japanese pages are shown as NZ$. The header language switcher (.mmm-lang) links each page to its counterpart.
