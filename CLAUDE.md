@@ -222,7 +222,7 @@ Sub-label (Space Grotesk uppercase, --slate): "FOUNDER, MIND & METRIC MEDIA"
 Two-column layout on desktop (text left, photo placeholder right).
 
 Body text:
-The career started in FMCG — Nestlé, Coca-Cola, Carlsberg, across China. Managing budgets, running campaigns, watching what actually moved volume versus what looked good in a deck. That foundation installs a question that doesn't go away: did this advertising work, or did it just spend?
+The career started in FMCG — Nestlé, Coca-Cola, Carlsberg. Managing budgets, running campaigns, watching what actually moved volume versus what looked good in a deck. That foundation installs a question that doesn't go away: did this advertising work, or did it just spend?
 
 New Zealand, 2021. A rapid progression through digital performance: hands-on search management, then leading GroupM Nexus activation teams across paid search, paid social, and programmatic at Mindshare, then Digital Performance Director at WPP Media Australia & New Zealand. A decade inside the largest media networks in the world, running campaigns for clients across travel, retail, automotive, education, and finance.
 
