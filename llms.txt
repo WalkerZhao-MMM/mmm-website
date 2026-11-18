@@ -22,6 +22,16 @@ A full Japanese translation of every page is available under /ja/, with the same
 - [Two Cents](https://www.mindandmetricmedia.co.nz/ja/two-cents.html)
 - [お問い合わせ](https://www.mindandmetricmedia.co.nz/ja/contact.html)
 
+## Korean (한국어)
+
+A full Korean translation of every page is available under /ko/, with the same content as the English site.
+
+- [홈](https://www.mindandmetricmedia.co.nz/ko/)
+- [서비스](https://www.mindandmetricmedia.co.nz/ko/services.html)
+- [대표 소개](https://www.mindandmetricmedia.co.nz/ko/about.html)
+- [Two Cents](https://www.mindandmetricmedia.co.nz/ko/two-cents.html)
+- [문의하기](https://www.mindandmetricmedia.co.nz/ko/contact.html)
+
 ## Contact
 
 - Email: enquiries@mindandmetricmedia.co.nz

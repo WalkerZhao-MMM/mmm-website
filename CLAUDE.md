@@ -326,3 +326,7 @@ Bottom line (very small, --slate):
 ## Japanese site (/ja/)
 
 Every English page has a 1:1 Japanese mirror under /ja/ with the same filename (articles under /ja/two-cents/). When an English page or article is added or edited, update its Japanese counterpart, the hreflang links on both, and sitemap.xml. Japanese style: site pages use です・ます, Two Cents articles use である調; write 貴社 (not 御社); use practitioner terms (リスティング広告, 管理画面上のCPA, 指名検索, 部分一致, インクリメンタリティ（増分効果）検証). Budgets on Japanese pages are shown as NZ$. The header language menu is a globe icon (details.mmm-lang) that opens a list of languages; each item links to the same page in that language. To add a language (e.g. Korean), add a list item to the menu on every page, a /ko/ mirror, and matching hreflang links. js/site.js closes the menu on outside click or Escape.
+
+## Korean site (/ko/)
+
+Same rules as the Japanese site: a 1:1 mirror under /ko/ with the same filenames, hreflang en/ja/ko/x-default on every page, and a KR item in the globe language menu. Korean style: site pages use formal 합니다체, Two Cents articles use 한다체; write 귀사; keep word-break: keep-all; use practitioner terms (검색광고, 매체 리포트 기준 CPA, 실질 CPA, 브랜드 키워드, 확장검색, 실적 최대화(P-MAX), 기여 분석, 게재 위치, 증분 효과(인크리멘탈리티) 측정, 소재). Privacy page title is 개인정보처리방침. Meetings are in English and the contact page says so.
