@@ -1548,39 +1548,79 @@ main > section + div {
   .mmm-switchoff-headline { margin: 0; }
 }
 
-/* ---- Language switcher (EN / JP) ------------------------------------ */
-.mmm-lang {
-  display: inline-flex;
+/* ---- Language menu (globe) ------------------------------------------ */
+.mmm-lang { position: relative; }
+.mmm-lang > summary {
+  list-style: none;
+  display: flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--ink-60);
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.mmm-lang > summary::-webkit-details-marker { display: none; }
+.mmm-lang > summary:hover,
+.mmm-lang[open] > summary { color: var(--ink); background: rgba(13, 27, 42, 0.07); }
+.mmm-lang > summary:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; }
+.mmm-lang-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 60;
+  min-width: 168px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--signal);
+  border: 1px solid var(--gold-edge);
+  border-radius: var(--radius-md);
+}
+.mmm-lang-menu a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  text-decoration: none;
+}
+.mmm-lang-menu a:hover { background: rgba(13, 27, 42, 0.06); color: var(--ink); }
+.mmm-lang-code {
   font-family: var(--labels);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--slate);
+  min-width: 1.6rem;
 }
-.mmm-lang a {
-  color: var(--ink-60);
-  text-decoration: none;
-  padding: 0.3rem 0.1rem;
-  border-bottom: 2px solid transparent;
+.mmm-lang-name {
+  font-family: "Space Grotesk", "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
-.mmm-lang a:hover { color: var(--ink); }
-.mmm-lang a[aria-current="true"] {
-  color: var(--ink);
-  border-bottom-color: var(--gold);
+.mmm-lang-menu a[aria-current="true"] .mmm-lang-code { color: var(--gold-deep); }
+.mmm-lang-menu a[aria-current="true"]::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: auto;
+  align-self: center;
+  border-radius: 50%;
+  background: var(--gold);
 }
-.mmm-lang-sep { color: var(--ink-60); opacity: 0.5; }
 @media (max-width: 768px) {
-  .mmm-header-actions { gap: 0.75rem; }
-  .mmm-lang { font-size: 0.7rem; letter-spacing: 0.06em; }
-  /* Small screens show only the other language, to keep the wordmark on fewer lines. */
-  .mmm-lang a[aria-current="true"], .mmm-lang-sep { display: none; }
+  .mmm-header-actions { gap: 0.6rem; }
+  .mmm-lang > summary { width: 32px; height: 32px; }
 }
 @media (max-width: 480px) {
   .mmm-header-bar { padding: 0 12px; }
-  .mmm-header-actions { gap: 0.45rem; }
+  .mmm-header-actions { gap: 0.35rem; }
   .mmm-wordmark { letter-spacing: 0.08em; }
+  .mmm-lang > summary { width: 28px; height: 28px; }
 }
 
 /* Five nav links + language switcher + CTA need ~1080px; below that use the menu. */
